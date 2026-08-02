@@ -1,0 +1,2785 @@
+{
+  "id": "a0b8178d-8870-49b4-aca8-74fca34350e9",
+  "version": "1.0",
+  "meta": {
+    "title": "Safety",
+    "created": "2026-06-03T06:51:36.279Z",
+    "updated": "2026-07-22T07:51:49.875Z",
+    "language": "en",
+    "completionMode": "allBlocks"
+  },
+  "settings": {
+    "theme": "slate",
+    "logoUrl": "media/logo-0.svg",
+    "spacing": 16,
+    "coverPage": {
+      "author": "",
+      "layout": "centered",
+      "enabled": true,
+      "ctaLabel": "Begin Course",
+      "duration": "## minutes",
+      "lessonId": "eaa35a46-db81-4867-a9e1-4f684239f23c",
+      "subtitle": "A short description of what this course covers.",
+      "menuLabel": "Welcome",
+      "background": {
+        "type": "none",
+        "overlayOpacity": 0
+      },
+      "showMetadata": {
+        "author": true,
+        "duration": true,
+        "lessonCount": true
+      }
+    },
+    "hoverColor": "#27272A",
+    "accentColor": "#18181B",
+    "borderRadius": 6,
+    "outlineColor": "#E4E4E7",
+    "primaryColor": "#18181B",
+    "showProgress": true,
+    "showNavigation": true,
+    "outlineThickness": 1
+  },
+  "sections": [
+    {
+      "id": "24ad07b3-0ade-4161-9ebe-5a68d933ebf6",
+      "title": "Cover",
+      "isCoverSection": true,
+      "lessons": [
+        {
+          "id": "eaa35a46-db81-4867-a9e1-4f684239f23c",
+          "title": "Safety",
+          "blocks": [
+            {
+              "id": "0814cc07-6942-4cdc-9ea8-0206b99d212c",
+              "type": "text",
+              "content": {
+                "html": "<p></p>"
+              }
+            }
+          ],
+          "isCoverPage": true
+        }
+      ]
+    },
+    {
+      "id": "f5c8d9da-1c12-4f58-b710-51b364f0f7dd",
+      "title": "Safety management systems",
+      "lessons": [
+        {
+          "id": "aa89e14a-dbd9-4a3b-9a9f-dbc1dea50a9c",
+          "title": "Introduction to SMS",
+          "blocks": [
+            {
+              "id": "6b024026-1219-4422-8602-d171e34d6b94",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Safety Management System</h3><p style=\"text-align: center;\"></p><p>It is a structured, company-wide way to manage safety</p><p>It uses policies, procedures, reporting, training, monitoring, and improvement to prevent accidents and reduce risk, and it is meant to be proactive, not just reactive</p><p></p>"
+              }
+            },
+            {
+              "id": "1a48f335-7b2a-4e8b-8330-037e2d25cd3d",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Four pillars of SMS</h3><p></p>"
+              }
+            },
+            {
+              "id": "b18d60c1-12f4-432c-9365-c52650a99186",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/picture1-03a2d567-f8bb-40b9-b3e2-81542283f688-1.jpg",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/picture1-03a2d567-f8bb-40b9-b3e2-81542283f688-1.jpg"
+              }
+            },
+            {
+              "id": "c24fcb26-5ba8-46e3-b6ec-1e1061b371bc",
+              "type": "accordion",
+              "content": {
+                "items": [
+                  {
+                    "id": "5033c926-ce14-433d-8117-1ca9db538d14",
+                    "items": [
+                      {
+                        "id": "f1ffeced-eff7-48d3-8151-ddc5402ac015",
+                        "type": "text",
+                        "content": "<p>What the company believes about safety, who is responsible, and what it wants to achieve</p>"
+                      }
+                    ],
+                    "title": "Safety Policy and Objectives"
+                  },
+                  {
+                    "id": "e52ba0f7-2d48-4e99-9fd5-0a0495154317",
+                    "items": [
+                      {
+                        "id": "48f852cc-e7e0-4222-bba9-70bdbd593209",
+                        "type": "text",
+                        "content": "<p>How hazards are identified, assessed, and controlled</p>"
+                      }
+                    ],
+                    "title": "Safety Risk Management"
+                  },
+                  {
+                    "id": "94a49ece-5a1c-4937-9635-103cfac89ff8",
+                    "items": [
+                      {
+                        "id": "8dc68033-8721-44f5-965b-6c2235308cfd",
+                        "type": "text",
+                        "content": "<p>How the company checks whether the system is working through audits, reviews, data, and monitoring</p>"
+                      }
+                    ],
+                    "title": "Safety Assurance"
+                  },
+                  {
+                    "id": "1dab3a51-4ad6-4eee-b952-58ccc7c392d2",
+                    "items": [
+                      {
+                        "id": "9e8300f9-4de6-4b1a-8875-d63fc5b8e196",
+                        "type": "text",
+                        "content": "<p>How the company builds awareness through training, communication, and a positive reporting culture</p>"
+                      }
+                    ],
+                    "title": "Safety Promotion"
+                  }
+                ],
+                "allowMultiple": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "e365bc8a-2113-4be7-86e3-78bf8b94598c",
+          "title": "Hazard vs Risk",
+          "blocks": [
+            {
+              "id": "464328f3-e303-4bc5-9eaf-bc10b364c25d",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Hazard vs Risk</h3><p></p>"
+              }
+            },
+            {
+              "id": "7190044b-ef80-4ae0-bf15-0a316db71b66",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/picture2-7cba8dc1-0ab0-4353-a4ab-8e106353496d-2.png",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/picture2-7cba8dc1-0ab0-4353-a4ab-8e106353496d-2.png"
+              }
+            },
+            {
+              "id": "5c0eaf4b-1fc5-4d8d-9acf-c2e96b9ec869",
+              "type": "table",
+              "content": {
+                "rows": [
+                  {
+                    "id": "fd497790-374b-4e55-a07a-3a0724b83ac0",
+                    "cells": [
+                      {
+                        "id": "6aa9d1e5-8325-4d8e-bd7d-e1f05faf081d",
+                        "html": "<p><strong>Aspect</strong></p>",
+                        "align": "center"
+                      },
+                      {
+                        "id": "95911a04-c884-445b-a284-881f0fda4816",
+                        "html": "<p><strong>Hazard</strong></p>",
+                        "align": "center"
+                      },
+                      {
+                        "id": "f98b8b40-c527-4a8c-9e1f-d32b270a9a35",
+                        "html": "<p><strong>Risk</strong></p>",
+                        "align": "center"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "f16958c2-c056-45e4-87bb-81aeeaaa9332",
+                    "cells": [
+                      {
+                        "id": "bedc41bf-43b0-43b2-adb6-093d4a1fd2c3",
+                        "html": "<p>Definition</p>",
+                        "align": "center"
+                      },
+                      {
+                        "id": "014f41e3-a7e9-41d1-a92c-007d0d9a1190",
+                        "html": "<p>A source or situation with the potential to cause harm, injury, illness, damage, or loss</p>"
+                      },
+                      {
+                        "id": "2ed18133-af84-4017-b149-961190444279",
+                        "html": "<p>The likelihood that a hazard will actually cause harm and the severity of that harm</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "68aee5fb-f228-4c16-823e-1d497c0fe85e",
+                    "cells": [
+                      {
+                        "id": "b3810450-092a-4bdb-935b-7cd090de7587",
+                        "html": "<p>Focus</p>",
+                        "align": "center"
+                      },
+                      {
+                        "id": "b6e9f439-05cc-4349-970b-33938250d953",
+                        "html": "<p>What can cause harm</p>"
+                      },
+                      {
+                        "id": "f9cba574-9519-4c60-8a56-0a786f6cab79",
+                        "html": "<p>How likely harm is to occur and how serious it could be</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "55b01186-39c1-4a04-9a18-4ef090790ae1",
+                    "cells": [
+                      {
+                        "id": "bb581491-d7c9-4307-9814-bc911b194b52",
+                        "html": "<p>Nature</p>",
+                        "align": "center"
+                      },
+                      {
+                        "id": "3610ee08-f9d5-4b77-8e53-b0d837298ec9",
+                        "html": "<p>Exists regardless of whether anyone is exposed</p>"
+                      },
+                      {
+                        "id": "76c69746-f593-4881-9d17-d6fcaa80ee6e",
+                        "html": "<p>Depends on exposure to the hazard and the effectiveness of controls</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "109f80cd-4685-4a77-a31f-ffd407c85835",
+                    "cells": [
+                      {
+                        "id": "11276829-bc1c-4ed2-bf21-c158c36f0807",
+                        "html": "<p>Components</p>",
+                        "align": "center"
+                      },
+                      {
+                        "id": "1669a7a8-727c-4412-be38-5b8efdf8f675",
+                        "html": "<p>Potential source of danger</p>"
+                      },
+                      {
+                        "id": "37c4186b-d122-475c-8e60-8e5c0dec992b",
+                        "html": "<p>Probability (likelihood) × Consequence (severity)</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "73432a45-ba9c-486d-bba0-abded194f4b2",
+                    "cells": [
+                      {
+                        "id": "b3976f84-3f14-4394-94ea-3bf3de271da4",
+                        "html": "<p>Can it be eliminated?</p>",
+                        "align": "center"
+                      },
+                      {
+                        "id": "1c32a38d-1c7d-4815-9c86-eaa4c854718a",
+                        "html": "<p>Sometimes, by removing the hazard</p>"
+                      },
+                      {
+                        "id": "e30c97e2-7480-432f-95df-282d65c0a9af",
+                        "html": "<p>Can be reduced by controlling or eliminating the hazard</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "dca12c4d-8213-4499-93b1-2a8144e7441c",
+                    "cells": [
+                      {
+                        "id": "7f8a0e11-2205-47e8-8d72-0348f074e8e9",
+                        "html": "<p>Example</p>",
+                        "align": "center"
+                      },
+                      {
+                        "id": "87139110-2cf1-45bf-8b56-52fca8b69c1b",
+                        "html": "<p>A wet floor, exposed electrical wires, toxic chemicals, moving machinery</p>"
+                      },
+                      {
+                        "id": "51963625-4ab9-47a5-b5a3-755dcf9aa56f",
+                        "html": "<p>Someone slipping on the wet floor and suffering a broken leg</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "fb9c6a42-ce8c-40bd-95a8-bbee95af08b5",
+                    "cells": [
+                      {
+                        "id": "bb78cf7b-f44f-481a-ab9a-d3a3f3ec0d3d",
+                        "html": "<p>Assessment</p>",
+                        "align": "center"
+                      },
+                      {
+                        "id": "ed1f08f9-32f1-471c-9307-cd7c0f36d1f2",
+                        "html": "<p>Hazard identification</p>"
+                      },
+                      {
+                        "id": "52e474f4-1c19-4a9f-b04c-899c67a09a2c",
+                        "html": "<p>Risk assessment (evaluating likelihood and severity)</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "05886d0c-2033-4d81-8c3c-1888a0284590",
+                    "cells": [
+                      {
+                        "id": "7803f392-fa90-4e35-a17e-63428dcf0846",
+                        "html": "<p>Control Measures</p>",
+                        "align": "center"
+                      },
+                      {
+                        "id": "859af295-113d-438f-930e-d55d5f0e2b71",
+                        "html": "<p>Remove, substitute, isolate, or engineer out the hazard</p>"
+                      },
+                      {
+                        "id": "4b155593-a14a-4392-80cc-1fd43eda51cf",
+                        "html": "<p>Reduce the likelihood or consequences through appropriate control measures</p>"
+                      }
+                    ]
+                  }
+                ],
+                "striping": "none",
+                "headerRow": true,
+                "borderStyle": "all",
+                "columnCount": 3,
+                "headerColumn": true
+              }
+            },
+            {
+              "id": "5c8ad8cd-1b4f-4ea3-abee-4b371370fcdd",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Accident vs Incident</h3><p></p>"
+              }
+            },
+            {
+              "id": "3dcb68ba-2604-4a12-be95-651979bcbef0",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/picture3-9c49a277-6857-4224-a76a-acc1fa6dc774-3.png",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/picture3-9c49a277-6857-4224-a76a-acc1fa6dc774-3.png"
+              }
+            },
+            {
+              "id": "2745f073-14ab-4ccc-a9b4-dab1cddcd852",
+              "type": "table",
+              "content": {
+                "rows": [
+                  {
+                    "id": "1ed4cedb-298d-49a6-8b85-1c9af6a33c28",
+                    "cells": [
+                      {
+                        "id": "a5508eba-769d-4361-9d80-406eadf30e2e",
+                        "html": "<p><strong>Accident </strong></p>",
+                        "align": "center"
+                      },
+                      {
+                        "id": "f550baef-a481-4755-b3a5-1a152d1494ac",
+                        "html": "<p><strong>Incident</strong></p>",
+                        "align": "center"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "fd467724-53f5-412b-8624-3ce299e2ea70",
+                    "cells": [
+                      {
+                        "id": "8797f403-f4db-473b-a0e4-2ed05dcd942d",
+                        "html": "<p>Causes injury, damage, or loss</p>"
+                      },
+                      {
+                        "id": "7fdf3e31-a1ed-4334-8391-cd7b484cdc3e",
+                        "html": "<p>May or may not cause injury or damage</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "1550943c-f261-4fe5-b1be-de051e7da661",
+                    "cells": [
+                      {
+                        "id": "2744a031-d6ab-42db-88fa-7a8c3fd0531a",
+                        "html": "<p>Always has harmful consequences</p>"
+                      },
+                      {
+                        "id": "00a49cc9-e60b-4049-b769-22351680dd97",
+                        "html": "<p>Can include accidents, near misses, and unsafe events</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "0134163c-beff-4481-af39-1da06126ed03",
+                    "cells": [
+                      {
+                        "id": "42054ef0-d70d-4bf1-9d89-da5e81dbd86a",
+                        "html": "<p>More serious</p>"
+                      },
+                      {
+                        "id": "d646d48a-159c-4f65-afca-8a189ead82fb",
+                        "html": "<p>Broader term</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "cc007a36-479c-4101-ad2a-05b28616aab7",
+                    "cells": [
+                      {
+                        "id": "b8f192a3-deb9-4015-b812-4febfad13c61",
+                        "html": "<p>Example: A worker falls and breaks a leg</p>"
+                      },
+                      {
+                        "id": "35007136-a207-4546-9766-43573f20cddf",
+                        "html": "<p>Example: A worker slips but does not fall or get hurt</p>"
+                      }
+                    ]
+                  }
+                ],
+                "striping": "none",
+                "headerRow": true,
+                "borderStyle": "all",
+                "columnCount": 2,
+                "headerColumn": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "125be158-64eb-47f2-ac31-17d05ce921a4",
+          "title": "Risk Mitigation & Control",
+          "blocks": [
+            {
+              "id": "f017f87f-79a8-4e62-9f84-b0cb62972b5b",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Risk Mitigation</h3><p></p>"
+              }
+            },
+            {
+              "id": "cbecb43e-d88d-4a57-89b2-bfe938c2cb6f",
+              "type": "text",
+              "content": {
+                "html": "<p>In simple context, mitigation consists of three practical strategies: avoidance, reduction, and segregation.</p><p>If an activity is too dangerous, avoid it. If it must continue, reduce the chance or impact of harm. If that still is not enough, separate the hazard from what it could damage, or add barriers that prevent the hazard from reaching people or equipment.</p>"
+              }
+            },
+            {
+              "id": "473275fc-de0b-422c-9abd-ef3727d68434",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/picture4-bec43795-4b07-42b6-9b89-0a27d53035aa-4.jpg",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/picture4-bec43795-4b07-42b6-9b89-0a27d53035aa-4.jpg"
+              }
+            },
+            {
+              "id": "8419e051-b3c4-4359-8993-40e1746bff5e",
+              "type": "accordion",
+              "content": {
+                "items": [
+                  {
+                    "id": "0a43b79b-d218-4a31-9956-c62a13ca1aea",
+                    "items": [
+                      {
+                        "id": "61e62d7a-2dd3-449d-9387-2ff82673ec55",
+                        "type": "text",
+                        "content": "<p>Risk avoidance means stopping or not conducting the activity because the risk is too high</p>"
+                      }
+                    ],
+                    "title": "Risk avoidance "
+                  },
+                  {
+                    "id": "43cf2599-5d39-4646-b002-39d129d1e6da",
+                    "items": [
+                      {
+                        "id": "8187cfd9-0e49-4468-83c7-8c06991559b9",
+                        "type": "text",
+                        "content": "<p>Risk reduction means lowering the likelihood or severity of the risk</p>"
+                      }
+                    ],
+                    "title": "Risk reduction "
+                  },
+                  {
+                    "id": "332a7b9e-8670-4d37-94c1-0fdc3d269583",
+                    "items": [
+                      {
+                        "id": "2534e53b-120f-40db-8283-00c5d7c916a7",
+                        "type": "text",
+                        "content": "<p>Risk segregation means separating the hazard from people, equipment, or operations, or building in protection and redundancy</p>"
+                      }
+                    ],
+                    "title": "Risk segregation "
+                  }
+                ],
+                "allowMultiple": false
+              }
+            },
+            {
+              "id": "1d786b17-7ddd-48cb-b159-aeb0e16758e3",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Practical Actions</h3><p></p>"
+              }
+            },
+            {
+              "id": "16e8b352-2b95-4e1d-b4f3-5e0d6f78a805",
+              "type": "card-carousel",
+              "content": {
+                "loop": true,
+                "cards": [
+                  {
+                    "id": "a4c98362-3a42-4041-b101-8a3d1bc9ab28",
+                    "items": [
+                      {
+                        "id": "0902ff7e-95f4-4907-a5c3-11083ad501fc",
+                        "type": "text",
+                        "content": "<p>Follow procedures and do not improvise unsafe shortcuts.</p><p>Supplemented by supporting new staff by showing correct work practices.</p>"
+                      }
+                    ],
+                    "title": "1",
+                    "linkUrl": "",
+                    "imageAlt": "",
+                    "imageUrl": "",
+                    "subtitle": "",
+                    "linkNewTab": false
+                  },
+                  {
+                    "id": "a5961a1f-e06e-43b1-87c8-2c025c5923d0",
+                    "items": [
+                      {
+                        "id": "55c269e6-4f20-425a-925f-32bdcb5a3b5a",
+                        "type": "text",
+                        "content": "<p>Use equipment only if trained and authorised.</p>"
+                      }
+                    ],
+                    "title": "2",
+                    "linkUrl": "",
+                    "imageAlt": "",
+                    "imageUrl": "",
+                    "subtitle": "",
+                    "linkNewTab": false
+                  },
+                  {
+                    "id": "40a6803b-36d8-4786-910f-6d706f5afe12",
+                    "items": [
+                      {
+                        "id": "a0fab229-b2ee-46ef-b25e-e47cfec6a44f",
+                        "type": "text",
+                        "content": "<p>Wear the required PPE and remain fit for duty.</p>"
+                      }
+                    ],
+                    "title": "3",
+                    "linkUrl": "",
+                    "imageAlt": "",
+                    "imageUrl": "",
+                    "subtitle": "",
+                    "linkNewTab": false
+                  },
+                  {
+                    "id": "90375ec3-e80b-4d4c-972e-c01ffc2e38d1",
+                    "items": [
+                      {
+                        "id": "e2aa759e-e97e-4b93-a215-19525e3e057e",
+                        "type": "text",
+                        "content": "<p>Report hazards, errors, incidents, and near misses promptly.</p>"
+                      }
+                    ],
+                    "title": "4",
+                    "linkUrl": "",
+                    "imageAlt": "",
+                    "imageUrl": "",
+                    "subtitle": "",
+                    "linkNewTab": false
+                  },
+                  {
+                    "id": "4d482b88-ca9c-48cd-a131-1ce13f69ce0e",
+                    "items": [
+                      {
+                        "id": "880f25a4-4b15-4b40-b6ef-a3e27d03ca24",
+                        "type": "text",
+                        "content": "<p>Escalate unresolved safety concerns when needed.</p>"
+                      }
+                    ],
+                    "title": "5",
+                    "linkUrl": "",
+                    "imageAlt": "",
+                    "imageUrl": "",
+                    "subtitle": "",
+                    "linkNewTab": false
+                  }
+                ],
+                "style": "default",
+                "autoplay": false,
+                "showDots": true,
+                "cardsPerView": 3,
+                "showNavigation": true,
+                "autoplayInterval": 5000
+              }
+            }
+          ]
+        },
+        {
+          "id": "28165578-0d49-4675-a714-f4dc0ed323f3",
+          "title": "Test Your Understanding",
+          "blocks": [
+            {
+              "id": "30ddc85a-b65f-446c-afdb-0d8a9cfccbf4",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "f3f8ecf2-df9f-48b4-aea7-3b2f62b31299",
+                    "text": "Safety Policy and Objectives",
+                    "correct": true
+                  },
+                  {
+                    "id": "d2dca68a-facb-4016-9323-5a3e82dce225",
+                    "text": "Safety Risk Management",
+                    "correct": true
+                  },
+                  {
+                    "id": "2da96e9f-5165-4571-aafc-c14b6a34552f",
+                    "text": "Human Resource Management",
+                    "correct": false
+                  },
+                  {
+                    "id": "9af5931b-5c17-4fa2-be6b-0db49a772d61",
+                    "text": "Safety Assurance",
+                    "correct": true
+                  },
+                  {
+                    "id": "8d5c822b-78af-43ed-9a92-9c4659dbca8c",
+                    "text": "Operational Management",
+                    "correct": false
+                  },
+                  {
+                    "id": "fb349b16-1b20-4184-86fa-dea895d50aa7",
+                    "text": "Safety Promotion",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! The four pillars of SMS are Safety Policy and Objectives, Safety Risk Management, Safety Assurance, and Safety Promotion. These pillars work together to establish, monitor, and continuously improve aviation safety.",
+                  "incorrect": "Try again. Which of these are unrelated to Safety Management Systems."
+                },
+                "question": "Which of the following are the four pillars of a Safety Management System (SMS)? ",
+                "instructions": "Select all that apply.",
+                "questionType": "multiple-select"
+              }
+            },
+            {
+              "id": "4010eae4-1f4e-4512-bb60-67d61c337326",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Post Lesson Understanding Check</h3><p></p>"
+              }
+            },
+            {
+              "id": "31cba339-1fa6-4295-9572-56780dcdb935",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "c3836406-a0c3-41ef-8fd6-71c35ba6ea15",
+                    "text": "To investigate accidents after they occur",
+                    "correct": false
+                  },
+                  {
+                    "id": "86cd1951-cd24-411e-910e-06acd5a29506",
+                    "text": "To proactively identify hazards and manage safety risks before accidents happen",
+                    "correct": true
+                  },
+                  {
+                    "id": "8f3a840c-d786-4b1b-b086-caf08b4dffa7",
+                    "text": "To reduce operational costs by minimizing staff training",
+                    "correct": false
+                  },
+                  {
+                    "id": "7b5e437e-40ef-48f2-af0a-0c14e8829ed6",
+                    "text": "To ensure only pilots are responsible for aviation safety",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! SMS is a proactive approach to safety. Instead of waiting for accidents to happen, it focuses on identifying hazards, assessing risks, and implementing controls to prevent incidents before they occur. While accident investigations are important, they are only one part of an overall safety management process.",
+                  "incorrect": "Try again. What does SMS focus on?"
+                },
+                "question": "What is the primary purpose of a Safety Management System (SMS)?",
+                "instructions": "Select the correct answer.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "17bf3329-1c75-42d1-baef-2d50b6511a9b",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "2cba58bc-ee4c-488b-a7be-357f37c6c4ce",
+                    "text": "Safety Policy and Objectives",
+                    "correct": false
+                  },
+                  {
+                    "id": "22ae47fe-8d7b-4187-acf7-c47ed88344b4",
+                    "text": "Safety Risk Management",
+                    "correct": false
+                  },
+                  {
+                    "id": "417db2f1-0feb-4e08-8a18-0a82ffeb3dc9",
+                    "text": "Financial Management",
+                    "correct": true
+                  },
+                  {
+                    "id": "4d97d88d-7b30-4975-af6c-5cc3152fa5e3",
+                    "text": "Safety Promotion",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Financial Management is important for running a business but is not a component of the Safety Management System.",
+                  "incorrect": "Try again. What isn't necessary for a Safety Management System?"
+                },
+                "question": "Which of the following is NOT one of the four pillars of a Safety Management System?",
+                "instructions": "Select the correct answer.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "3ad715c0-4ab1-49f1-a34f-f7ced588ef76",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "b01b53a5-c0bc-4665-920e-95338aaedebf",
+                    "text": "Continue working and report it at the end of the month.",
+                    "correct": false
+                  },
+                  {
+                    "id": "bd55c564-40d8-4d8c-9d47-d3928cb6a1f2",
+                    "text": "Repair the equipment yourself without informing anyone.",
+                    "correct": false
+                  },
+                  {
+                    "id": "0d643061-fb5d-423d-a672-086286ad6841",
+                    "text": "Ignore it if it has not caused an accident.",
+                    "correct": false
+                  },
+                  {
+                    "id": "590c20ed-f40b-47f8-a859-68873293c5a7",
+                    "text": "Report the hazard through the appropriate reporting process so the risk can be assessed.",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! One of the key principles of SMS is early hazard identification and reporting. Reporting the damaged equipment allows the organization to assess the associated risk and implement appropriate controls before it causes an incident or accident.",
+                  "incorrect": "Try again. What is the best way to handle this situation?"
+                },
+                "question": "While conducting your daily duties, you notice a damaged piece of ground equipment that could create a safety hazard if left unattended. According to SMS principles, what should you do FIRST?",
+                "instructions": "Select the correct answer.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "1e5cdf6b-ee4c-4f75-a14f-80a63c1dc838",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "a4c97400-c69e-4998-9780-a97651fe4001",
+                    "text": "True",
+                    "correct": false
+                  },
+                  {
+                    "id": "88ec1a7b-d9d4-416a-bb07-0af5d0649b2e",
+                    "text": "False",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Hazards should be reported as soon as they are identified. Early reporting allows risks to be assessed and controlled before they result in an incident or accident.",
+                  "incorrect": "Try again. Hazards may result in an incident or accident if left unannounced."
+                },
+                "question": "Reporting hazards is only necessary after an accident has occurred.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "e0ab168c-69e5-46d9-99f0-afa3460f40a7",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "66187fb2-5f12-41ca-b13c-c4f7bb9814af",
+                    "text": "True",
+                    "correct": false
+                  },
+                  {
+                    "id": "2e70745c-b92c-4cb0-94fc-cfc6df85a9d0",
+                    "text": "False",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! While training is an important part of Safety Promotion, it also includes communication, safety awareness campaigns, and encouraging employees to report safety concerns to foster a strong safety culture.",
+                  "incorrect": "Try again. Safety Training to new employees is only a part of what Safety Promotion is about."
+                },
+                "question": "Safety Promotion focuses only on providing safety training to new employees.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "7bac1ffe-7f00-4296-ad4c-6c6520bf25e4",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "e256d46b-17c6-4b49-8a14-47e253fcef40",
+                    "text": "True",
+                    "correct": false
+                  },
+                  {
+                    "id": "986d0347-684b-4df2-91ab-bc7ea0edfc62",
+                    "text": "False",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Safety is everyone's responsibility. Although management provides leadership and resources, every employee is expected to identify hazards, follow procedures, and contribute to a safe working environment.",
+                  "incorrect": "Try again. Managers provide leadership and resources, but they are only a part of those responsible for maintaining safety."
+                },
+                "question": "Only managers are responsible for maintaining safety within an organization's Safety Management System.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "b1e0c64e-b218-400a-a626-5e0e8c9b6ade",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "fdcb6bd9-e9aa-4fb2-ac66-393d09d2b6f1",
+                    "text": "True",
+                    "correct": true
+                  },
+                  {
+                    "id": "88b8b096-eba4-46a0-be70-4f8d97c55994",
+                    "text": "False",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! An effective SMS promotes open communication and encourages reporting so that hazards can be addressed before they lead to accidents.",
+                  "incorrect": "Try again. Who would want to report if they get blamed for it."
+                },
+                "question": "A strong safety culture encourages employees to report hazards without fear of blame or punishment.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "c3383934-2a26-4b6d-96e0-b8d9bdf035bf",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "849551fc-1568-4baa-a096-191784618b0a",
+                    "text": "Developing marketing campaigns",
+                    "correct": false
+                  },
+                  {
+                    "id": "d1cdbe8e-9452-4fc1-8501-3b5d7af80817",
+                    "text": "Conducting safety audits",
+                    "correct": true
+                  },
+                  {
+                    "id": "53423258-6a45-4f89-90cd-9dcb63e14810",
+                    "text": "Performing safety inspections",
+                    "correct": true
+                  },
+                  {
+                    "id": "5bc56286-1426-435d-b639-3cb49e6e20e7",
+                    "text": "Monitoring safety performance",
+                    "correct": true
+                  },
+                  {
+                    "id": "3545909b-5e64-4554-88ae-c42cea4fb9b7",
+                    "text": "Analysing safety data and trends",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! SMS implementation is a continuous cycle that begins with management commitment and includes risk management, implementation of controls, monitoring, and continuous improvement.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which of the following activities are part of Safety Assurance?",
+                "instructions": "Select all that apply.",
+                "questionType": "multiple-select"
+              }
+            },
+            {
+              "id": "3a99086f-4342-49ba-bf49-397b7fbd00b8",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "d9e4f815-93c2-44b9-92c4-68c20e9bf07f",
+                    "text": "Safety procedures never need updating once implemented.",
+                    "correct": false
+                  },
+                  {
+                    "id": "a8323643-faae-4300-baa0-72157974729c",
+                    "text": "Risks and operational environments change over time, requiring ongoing review and improvement.",
+                    "correct": true
+                  },
+                  {
+                    "id": "ebc5736b-1158-42c2-b845-83061d202b6c",
+                    "text": "It reduces the need for safety reporting.",
+                    "correct": false
+                  },
+                  {
+                    "id": "7715482c-eda8-43dc-a85b-2d9f00c9bfb0",
+                    "text": "It replaces safety audits.  ",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! SMS is a continuous cycle. Organizations regularly review safety performance, identify new hazards, implement corrective actions, and refine their safety processes to adapt to changing conditions.",
+                  "incorrect": "Try again. SMS is best if updated regularly."
+                },
+                "question": "Why is continuous improvement an important part of SMS?",
+                "questionType": "multiple-choice"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "c4dee52f-60f2-4e81-ba71-e942f88a64d2",
+      "title": "Human Factors",
+      "lessons": [
+        {
+          "id": "c03430ee-a4a1-4f74-bafc-e5b2929ce7bd",
+          "title": "Introduction to Human Factors",
+          "blocks": [
+            {
+              "id": "8b855a93-501d-428b-a54b-e13e705303b1",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\"> Understanding Human Factors</h3><p></p>"
+              }
+            },
+            {
+              "id": "2c69b3ef-81fa-4a66-a342-95b094e82da4",
+              "type": "accordion",
+              "content": {
+                "items": [
+                  {
+                    "id": "88f961ef-c73f-4949-94bb-43d7585d1d39",
+                    "items": [
+                      {
+                        "id": "6fa19a9a-e609-449b-879d-af55b5a9ee5d",
+                        "type": "text",
+                        "content": "<p>Human factors refer to the complex interactions between humans, technology, and the environment in which aviation activities take place. They encompass cognitive, physical, and organizational factors that influence human performance.</p>"
+                      }
+                    ],
+                    "title": "Definition of Human Factors"
+                  },
+                  {
+                    "id": "68c0dcb1-7351-4ecd-a6fa-ffdd07626daa",
+                    "items": [
+                      {
+                        "id": "af8fe04e-75bc-480e-b5b5-699ad2bb9914",
+                        "type": "text",
+                        "content": "<p>Human factors significantly impact aviation safety, operational efficiency, and the overall quality of air transportation services.</p>"
+                      }
+                    ],
+                    "title": "Significance of Human Factors"
+                  }
+                ],
+                "allowMultiple": false
+              }
+            },
+            {
+              "id": "3d8ec326-e956-417e-864c-20bbf89dde8c",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Categories of Human Factors</h3><p></p>"
+              }
+            },
+            {
+              "id": "59489d09-933b-4c65-882b-c8d44f95bc65",
+              "type": "accordion",
+              "content": {
+                "items": [
+                  {
+                    "id": "4e05ab09-880f-423e-b811-1cb7a82d5626",
+                    "items": [
+                      {
+                        "id": "b6120118-5e4a-42a3-9b2c-b415b78c2e42",
+                        "type": "text",
+                        "content": "<p>Discuss the psychological aspects affecting decision-making, perception, memory, and attention. Explore how cognitive factors contribute to errors.</p>"
+                      }
+                    ],
+                    "title": "Cognitive Factors"
+                  },
+                  {
+                    "id": "9117e889-7539-49e7-9303-988358c94195",
+                    "items": [
+                      {
+                        "id": "72ca412b-4a1e-4e86-be09-253a8d8b4f42",
+                        "type": "text",
+                        "content": "<p>Address the impact of physical capabilities and limitations on aviation tasks, such as ergonomics and physical stress.</p>"
+                      }
+                    ],
+                    "title": "Physical Factors"
+                  },
+                  {
+                    "id": "d2044a9f-820e-490d-8fbd-e2a1be73a4ce",
+                    "items": [
+                      {
+                        "id": "224a83c4-805b-41fb-9d10-b880dac15d7a",
+                        "type": "text",
+                        "content": "<p>Explore the influence of organizational culture, communication, and leadership on aviation safety and performance.</p>"
+                      }
+                    ],
+                    "title": "Organizational Factors"
+                  }
+                ],
+                "allowMultiple": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "1dc0f00d-8d74-402f-9c20-925e21fb40bb",
+          "title": "The \"Dirty Dozen\"",
+          "blocks": [
+            {
+              "id": "0f392d06-f6e0-437b-b843-e374eaf8c963",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Introduction to the \"Dirty Dozen\"</h3><p></p>"
+              }
+            },
+            {
+              "id": "385e3b26-3fdb-43bf-a61e-f2e9d656fb30",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/image-2026-06-23-232208664-1c44aff0-a0b6-40eb-829e-5.png",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/image-2026-06-23-232208664-1c44aff0-a0b6-40eb-829e-5.png"
+              }
+            },
+            {
+              "id": "99e76184-12f6-4bb8-8081-17604b431f78",
+              "type": "text",
+              "content": {
+                "html": "<p>Together they are a collection of twelve human factors often associated with aviation accidents. These factors highlight the importance of understanding the human aspects of aviation operations and the critical role they play in ensuring safety and preventing errors.</p>"
+              }
+            },
+            {
+              "id": "0f9c4a4c-2ccf-44b8-bbac-3fea36842c4d",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">The \"Dirty Dozen\"</h3><p></p>"
+              }
+            },
+            {
+              "id": "b0891e1f-ac4b-423e-9945-16b7c59180b3",
+              "type": "table",
+              "content": {
+                "rows": [
+                  {
+                    "id": "4d10f1a1-6be4-4fd2-bcf1-e1f3c45780c7",
+                    "cells": [
+                      {
+                        "id": "87930bcb-9bf1-4900-8966-1a09367b9600",
+                        "html": "<p>Lack of Communication</p>"
+                      },
+                      {
+                        "id": "d6b25723-ae53-4251-9c01-69508d3eb37b",
+                        "html": "<p>Inadequate information sharing among personnel</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "372daf10-6c2d-485d-bb73-18918f65c9e9",
+                    "cells": [
+                      {
+                        "id": "6a2eacd4-cdfe-4677-a09d-19e426dfa538",
+                        "html": "<p>Lack of Knowledge</p>"
+                      },
+                      {
+                        "id": "796bf64e-7aea-4b98-9184-a2a27c5a584a",
+                        "html": "<p>Insufficient understanding of procedures, equipment, or tasks</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "c6dd5386-97c4-459a-a759-2f5ff2a1e5cc",
+                    "cells": [
+                      {
+                        "id": "cbc24bf5-241e-469c-85b3-ca4d939f22c6",
+                        "html": "<p>Lack of Teamwork </p>"
+                      },
+                      {
+                        "id": "4e999d3d-c6ab-4da1-afa4-b9b46964159b",
+                        "html": "<p>Poor collaboration and coordination among crew members</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "79765147-3d4e-4d92-9fb4-8c176ab65d81",
+                    "cells": [
+                      {
+                        "id": "1126df89-3357-4ced-b97c-258b71ab02d3",
+                        "html": "<p>Lack of Resources</p>"
+                      },
+                      {
+                        "id": "2c28e6ee-65a3-414a-9bd1-4bf0051b168e",
+                        "html": "<p>Insufficient tools, information, or support for tasks</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "d32e47cb-1dab-4614-be27-f773905e367c",
+                    "cells": [
+                      {
+                        "id": "959962a7-1f34-4617-832d-1b719c34130a",
+                        "html": "<p>Lack of Assertiveness</p>"
+                      },
+                      {
+                        "id": "12c2f41a-a057-4cc7-8e57-225eb2175c59",
+                        "html": "<p>Hesitation to speak up about concerns or errors</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "988b7b49-c217-4844-b4a9-af3f5d055e48",
+                    "cells": [
+                      {
+                        "id": "bd111b1f-6090-4036-aaae-deeee3ce546f",
+                        "html": "<p>Lack of Awareness</p>"
+                      },
+                      {
+                        "id": "94259a72-828a-48b6-a6d8-0b9993588f63",
+                        "html": "<p>Incomplete situational awareness or failure to recognise risks</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "231bf650-6b4c-43f2-b771-874b5207e3a8",
+                    "cells": [
+                      {
+                        "id": "6d4f8f9e-dfda-45e1-8ae8-9ff6aba8fbbb",
+                        "html": "<p>Complacency</p>"
+                      },
+                      {
+                        "id": "fd9f1c82-cabc-4576-912c-3d2123e4b561",
+                        "html": "<p>Overconfidence leading to a lack of vigilance and attention</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "05a35ef7-aa81-4227-a254-17915657d157",
+                    "cells": [
+                      {
+                        "id": "c5938dcd-8914-46b5-8849-124a0a3f92fa",
+                        "html": "<p>Distraction</p>"
+                      },
+                      {
+                        "id": "f7763325-f0fd-4e24-95c5-84d55ad14943",
+                        "html": "<p>Diverted attention from critical tasks due to various reasons</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "e80ebdb4-0bf6-4285-815a-8bf54506c958",
+                    "cells": [
+                      {
+                        "id": "9d68f88c-e525-438f-865a-280661b0bc95",
+                        "html": "<p>Fatigue</p>"
+                      },
+                      {
+                        "id": "5eb9b11f-2bed-48aa-bb81-41d6d06c50e3",
+                        "html": "<p>Impaired performance due to physical and mental exhaustion</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "8730fd40-aafc-432a-b2f1-11a47f7a6ffc",
+                    "cells": [
+                      {
+                        "id": "66fe2b55-9817-4100-814e-51269e8d9c20",
+                        "html": "<p>Pressure</p>"
+                      },
+                      {
+                        "id": "e1a6c1c4-3c68-4110-bde6-bff1f57b5ddd",
+                        "html": "<p>Stressful situations influencing decision-making negatively</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "1a768700-690b-4bb9-9683-dfebcd798085",
+                    "cells": [
+                      {
+                        "id": "d382a990-b975-4c7e-8b67-c863dce0d987",
+                        "html": "<p><strong>Stress</strong></p>"
+                      },
+                      {
+                        "id": "73f50d09-db02-4a1c-aa3b-ca7202aabf7a",
+                        "html": "<p>Emotional or psychological strain impacting performance</p>"
+                      }
+                    ]
+                  },
+                  {
+                    "id": "452a0292-2968-44b1-8d8a-e42154612fc2",
+                    "cells": [
+                      {
+                        "id": "dfcdbebf-c677-4e04-95fa-bdaceb49a276",
+                        "html": "<p>Norms</p>"
+                      },
+                      {
+                        "id": "8f5bba1b-5a31-44cc-8961-14db211a6429",
+                        "html": "<p>Adherence to established practices, even when they are unsafe</p>"
+                      }
+                    ]
+                  }
+                ],
+                "striping": "none",
+                "headerRow": false,
+                "borderStyle": "all",
+                "columnCount": 2,
+                "headerColumn": true
+              }
+            }
+          ]
+        },
+        {
+          "id": "cdf306c3-b71b-46c1-9110-b3736fc4f373",
+          "title": "Mitigating Human Factors",
+          "blocks": [
+            {
+              "id": "ed131594-46a4-462c-8c95-d20c255c6e6e",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Identifying and Addressing Human Factors</h3><p></p>"
+              }
+            },
+            {
+              "id": "a26d0911-fbc0-452b-a037-9fccdd793e18",
+              "type": "text",
+              "content": {
+                "html": "<p>To mitigate human factors, regular risk assessments are vital to recognize potential risks. Implementing open reporting channels fosters a culture of reporting concerns without fear of reprisal. </p><p>Thorough analyses of incidents and accidents enable the identification of underlying human factor contributions. </p>"
+              }
+            },
+            {
+              "id": "1340323f-2b1f-4255-beb8-d0008bf4bb28",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/image-2026-06-23-233333915-d174c12e-5991-4168-b19f-6.png",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/image-2026-06-23-233333915-d174c12e-5991-4168-b19f-6.png"
+              }
+            },
+            {
+              "id": "fc49e6c3-2c7c-4649-991b-11f324723979",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Training and Education</h3><p></p>"
+              }
+            },
+            {
+              "id": "0ffec8bd-e786-4b55-b698-593a9075bd71",
+              "type": "text",
+              "content": {
+                "html": "<p>Raising awareness about human factors, their consequences, and mitigation strategies is crucial. </p><p>Crew Resource Management (CRM) training enhances communication, teamwork, and decision-making skills among aviation professionals. </p>"
+              }
+            },
+            {
+              "id": "01ce3a86-efc4-4f3e-a766-386d57d2604b",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/image-2026-06-23-233501815-3886c863-4265-4ec6-b197-7.png",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/image-2026-06-23-233501815-3886c863-4265-4ec6-b197-7.png"
+              }
+            }
+          ]
+        },
+        {
+          "id": "40c1d37b-1436-4263-8616-a910c696b467",
+          "title": "Promoting Aviation Safety",
+          "blocks": [
+            {
+              "id": "d1673bad-d5b7-40e5-984f-dbc6407a507e",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Implementing Safety Culture</h3><p></p>"
+              }
+            },
+            {
+              "id": "fdfc14d2-af8f-4886-a15d-07cbe4d75841",
+              "type": "text",
+              "content": {
+                "html": "<p>Safety culture prioritizes shared values, attitudes, and practices that place safety at the forefront. </p><p>A robust safety culture proactively manages human factors and encourages reporting and learning from errors. </p>"
+              }
+            },
+            {
+              "id": "e0f996e1-b5f2-4a1d-934b-a9c7c08baacd",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/image-2026-06-23-233909707-a02d779b-6083-45fb-a65d-8.png",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/image-2026-06-23-233909707-a02d779b-6083-45fb-a65d-8.png"
+              }
+            },
+            {
+              "id": "dc0af0fc-c169-4488-9db1-67df23664021",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Reporting and Feedback</h3><p></p>"
+              }
+            },
+            {
+              "id": "d4172016-fab3-40be-aa57-faac4ecab94a",
+              "type": "accordion",
+              "content": {
+                "items": [
+                  {
+                    "id": "5d21025f-2f30-4d29-85df-7a60d65f4f12",
+                    "items": [
+                      {
+                        "id": "93dc27b8-ef30-4b14-8a06-66a6f32cb143",
+                        "type": "text",
+                        "content": "<p>Encourage personnel to report incidents and near-misses to identify trends and potential hazards</p>"
+                      }
+                    ],
+                    "title": "Open Reporting"
+                  },
+                  {
+                    "id": "83016621-1b2d-40ef-8776-a472aa03f660",
+                    "items": [
+                      {
+                        "id": "cff939af-f481-4149-8508-119aef4b2f9d",
+                        "type": "text",
+                        "content": "<p>Use reported data to enhance training programs and operational procedures continually</p>"
+                      }
+                    ],
+                    "title": "Learning Culture"
+                  }
+                ],
+                "allowMultiple": false
+              }
+            },
+            {
+              "id": "bf89aeb5-bd2a-4b3c-bf3e-11095c4bb15d",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Embracing Human Factors in Aviation</h3><p></p>"
+              }
+            },
+            {
+              "id": "e3a83f5c-73d3-4521-8505-d3c8f88b8849",
+              "type": "text",
+              "content": {
+                "html": "<p>Recognizing and addressing human factors is pivotal for aviation safety. By embracing best practices, raising awareness, and fostering a safety culture, aviation professionals contribute to enhanced safety and performance.</p>"
+              }
+            },
+            {
+              "id": "9311a816-6989-4eef-994a-d8b311741f9e",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\">Continuous Learning</h3><p></p>"
+              }
+            },
+            {
+              "id": "860b2fbe-3f62-42f1-9385-91a67f4bca52",
+              "type": "text",
+              "content": {
+                "html": "<p>As aviation evolves, staying updated with dynamic human factors is essential. Technology advancements, regulatory changes, and operational shifts necessitate continuous learning for sustained safety and operational efficiency. </p>"
+              }
+            }
+          ]
+        },
+        {
+          "id": "2865dd7a-f881-4364-a0de-3872f29d0fd5",
+          "title": "Test Your Understanding",
+          "blocks": [
+            {
+              "id": "dc6926d7-c055-4020-99b4-c4a5c38c0751",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "72f29a5c-2633-469f-abb1-b094fade056c",
+                    "text": "The interactions between humans, technology, and the environment that influence performance and safety.",
+                    "correct": true
+                  },
+                  {
+                    "id": "95407194-4b81-489a-a9f2-4c93a5030de2",
+                    "text": "The study of aircraft maintenance procedures only.",
+                    "correct": false
+                  },
+                  {
+                    "id": "48d817c6-ce81-4565-9fb8-ac204001f0be",
+                    "text": "The regulations governing aviation operations.",
+                    "correct": false
+                  },
+                  {
+                    "id": "bdb9df1c-907d-4ccc-aa14-23d3506962dd",
+                    "text": "The mechanical performance of aircraft systems.",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Human factors examine how people interact with technology and their working environment. These interactions influence decision-making, performance, and ultimately aviation safety.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which of the following best defines human factors in aviation?",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "b7ee38b8-0fae-4468-b811-5576375b46d6",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "3803908e-d0b0-46dd-b5a9-e021565dfce2",
+                    "text": "Fatigue caused by a lack of sleep.",
+                    "correct": false
+                  },
+                  {
+                    "id": "31695156-4c75-4812-b82d-aaa3b064fde4",
+                    "text": "Difficulty remembering a checklist.",
+                    "correct": false
+                  },
+                  {
+                    "id": "4064c7d8-e433-4ed7-94a5-3b7467c38442",
+                    "text": "Limited physical strength when lifting equipment.",
+                    "correct": false
+                  },
+                  {
+                    "id": "13b211b4-d619-4979-8af4-5e505822ba03",
+                    "text": "Poor communication and leadership within the organization.",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Organizational factors include workplace culture, leadership, communication, and company policies, all of which influence employee performance and safety.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which of the following is an example of an organizational factor?",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "a80270dc-dd1b-4f8d-87fe-d711d33b7db4",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "0153319d-d140-4a00-bcf2-b60e3737fbff",
+                    "text": "Emergency Evacuation Training",
+                    "correct": false
+                  },
+                  {
+                    "id": "f4ad7191-0812-4be0-85aa-0a5e6a155d6a",
+                    "text": "Crew Resource Management (CRM) Training",
+                    "correct": true
+                  },
+                  {
+                    "id": "7315ad7b-18f9-44cb-8a93-ee00648d9c8d",
+                    "text": "Dangerous Goods Training",
+                    "correct": false
+                  },
+                  {
+                    "id": "4d0c3293-5b9f-4f29-8f18-da736e880c12",
+                    "text": "Aircraft Marshalling Training",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Crew Resource Management (CRM) training develops communication, teamwork, leadership, and decision-making skills to reduce human error and improve operational safety.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which training is specifically designed to improve communication, teamwork, and decision-making among aviation personnel?",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "3b5a8432-920c-46f0-bd3b-b8d34aa9aab8",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "29915abf-060e-429f-af24-d1a04c15fd23",
+                    "text": "True",
+                    "correct": false
+                  },
+                  {
+                    "id": "ea5df1dc-6d98-4db8-8512-015864ec646f",
+                    "text": "False",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Human factors include cognitive, physical, and organizational factors that influence human performance, not just physical limitations.",
+                  "incorrect": "Try again."
+                },
+                "question": "Human factors only refer to physical limitations such as strength and fatigue.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "a2ed84be-3371-4d29-bc01-2feefa4e9e57",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "6b0a2306-fa12-4e49-a2dd-d506f23db804",
+                    "text": "True",
+                    "correct": true
+                  },
+                  {
+                    "id": "5afd8462-7d73-4827-8a55-ef33ee3c1f32",
+                    "text": "False",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Fatigue can impair concentration, reaction time, judgement, and overall performance, making it a significant contributor to human error.",
+                  "incorrect": "Try again."
+                },
+                "question": "Fatigue is one of the \"Dirty Dozen\" human factors that can negatively affect performance and decision-making.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "8a99aaa9-f1ee-4169-bccb-055baa9fe311",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "241632cc-d937-4978-817d-fbf329b66a93",
+                    "text": "True",
+                    "correct": true
+                  },
+                  {
+                    "id": "79a933f0-0a2f-4f4f-a216-5ce00cf04eae",
+                    "text": "False",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Open reporting allows organizations to identify trends, address hazards early, and continuously improve operational procedures.",
+                  "incorrect": "Try again."
+                },
+                "question": "A strong safety culture encourages employees to report incidents and near-misses so the organization can learn and improve.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "d07cdde5-a720-44c7-b115-872fd65c2cc8",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "ccc8b8ac-4e21-4e8b-9406-8876924ecc8c",
+                    "text": "Lack of Communication",
+                    "correct": true
+                  },
+                  {
+                    "id": "c2c175f8-cba6-4877-8bea-ddb27863e6d2",
+                    "text": "Fatigue",
+                    "correct": true
+                  },
+                  {
+                    "id": "3eeb9a89-3234-4e42-8349-f198b1dd198d",
+                    "text": "Complacency",
+                    "correct": true
+                  },
+                  {
+                    "id": "ab52f379-ddd9-4332-8590-0dbed12939d6",
+                    "text": "Equipment Failure",
+                    "correct": false
+                  },
+                  {
+                    "id": "485640c8-15f3-454b-9846-5a21d54e9729",
+                    "text": "Stress",
+                    "correct": true
+                  },
+                  {
+                    "id": "6b7af7a2-9ee4-4f99-9f58-d8a843df735f",
+                    "text": "Lack of Teamwork",
+                    "correct": true
+                  },
+                  {
+                    "id": "281df0c7-d26b-4eb1-bcfd-dc6c68108d5e",
+                    "text": "Fuel Shortage",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! The \"Dirty Dozen\" consists of twelve common human factors that contribute to aviation incidents, including lack of communication, complacency, fatigue, stress, and lack of teamwork. Equipment failure and fuel shortage are operational or technical issues rather than human factors.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which of the following are included in the \"Dirty Dozen\" human factors?",
+                "instructions": "Select all that apply.",
+                "questionType": "multiple-select"
+              }
+            },
+            {
+              "id": "86090193-d703-4367-a278-ed1a3b47103c",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "945daf21-34d9-4af7-90a9-6eab56456d70",
+                    "text": "Conducting regular risk assessments",
+                    "correct": true
+                  },
+                  {
+                    "id": "423d2f4c-ff82-4e9f-b50d-31ad25ab2cfd",
+                    "text": "Encouraging open reporting of hazards and incidents",
+                    "correct": true
+                  },
+                  {
+                    "id": "47be85d2-09a5-4efd-861b-68c4edc76be7",
+                    "text": "Providing Crew Resource Management (CRM) training",
+                    "correct": true
+                  },
+                  {
+                    "id": "40cb3f2e-ac3d-437f-ad05-5aa4306de018",
+                    "text": "Ignoring near-miss reports if no damage occurred",
+                    "correct": false
+                  },
+                  {
+                    "id": "094e8180-4873-4bc5-8606-a699fa3abae8",
+                    "text": "Promoting a positive safety culture",
+                    "correct": true
+                  },
+                  {
+                    "id": "23218351-00ed-4904-9d8a-8f2a4895e28b",
+                    "text": "Learning from incidents to improve procedures",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Mitigating human factors involves identifying risks early, encouraging reporting, providing appropriate training, promoting a positive safety culture, and using lessons learned from incidents to improve future operations. Ignoring near-misses prevents organizations from identifying hazards before they result in accidents.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which of the following actions help mitigate human factors in aviation",
+                "instructions": "Select all that apply.",
+                "questionType": "multiple-select"
+              }
+            },
+            {
+              "id": "daa22ee6-111d-41cd-b91d-a8add04ced97",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "a229a232-7aca-4776-970c-d2240c52f4cc",
+                    "text": "Feeling physically exhausted after a long shift.",
+                    "correct": false
+                  },
+                  {
+                    "id": "88f77780-cb20-449b-b134-1389a3591df7",
+                    "text": "Being unable to communicate with other team members.",
+                    "correct": false
+                  },
+                  {
+                    "id": "e81da411-9fb9-436d-b0b6-d79991d60f25",
+                    "text": "Becoming overconfident and paying less attention to potential hazards.",
+                    "correct": true
+                  },
+                  {
+                    "id": "6e1629c1-efc2-4d8f-a7f1-34a6ec17a59b",
+                    "text": "Working without the necessary tools or equipment.",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Complacency occurs when individuals become overly confident due to routine or familiarity with a task. This can lead to reduced vigilance, causing important hazards or errors to be overlooked.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which of the following best describes complacency as one of the \"Dirty Dozen\" human factors?",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "2990c91e-50e0-4814-b863-f2cf2e7ebc9b",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "285193db-dfa1-4bac-b80e-465c3b68dfca",
+                    "text": "True",
+                    "correct": true
+                  },
+                  {
+                    "id": "8cdd713e-7b0d-47cc-9c53-78579e0e1a78",
+                    "text": "False",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Good communication and teamwork improve situational awareness, reduce misunderstandings, and support better decision-making. These are key strategies for mitigating several of the \"Dirty Dozen\" factors, such as lack of communication and lack of teamwork.",
+                  "incorrect": "Try again."
+                },
+                "question": "Effective communication and teamwork can help reduce the impact of human factors on aviation safety.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "38ff6259-78c3-4ae2-9c68-f620ab2f6e46",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "a5d52cd1-6167-4b70-841b-3806aff9faba",
+                    "text": "Physical strength",
+                    "correct": false
+                  },
+                  {
+                    "id": "a63db2c8-a01c-493a-825b-9811261d3f74",
+                    "text": "Memory",
+                    "correct": true
+                  },
+                  {
+                    "id": "ee7ba909-1090-477d-9d1c-41140f0b8292",
+                    "text": "Attention",
+                    "correct": true
+                  },
+                  {
+                    "id": "b2e5b611-f05f-48d0-9c72-e575175e9179",
+                    "text": "Leadership",
+                    "correct": false
+                  },
+                  {
+                    "id": "4c56c5d7-ecc5-4641-857e-b1af2dd80a0b",
+                    "text": "Perception",
+                    "correct": true
+                  },
+                  {
+                    "id": "7ea119db-1579-4eaa-b5b2-d1ba0c243dbd",
+                    "text": "Decision-making",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Cognitive human factors relate to the mental processes that affect how people perform their work, including decision-making, memory, attention, and perception. Leadership is considered an organizational factor, while physical strength is a physical factor.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which of the following are examples of cognitive human factors?",
+                "instructions": "Select all that apply.",
+                "questionType": "multiple-select"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "15382101-073e-42a1-86dc-418a0f789cf2",
+      "title": "Dangerous Goods",
+      "lessons": [
+        {
+          "id": "7c72e9fe-dbb9-4f04-8d1b-df8a3448ed7a",
+          "title": "Introduction to DG",
+          "blocks": [
+            {
+              "id": "1596a7ec-473d-471a-8651-ff951050fe22",
+              "type": "text",
+              "content": {
+                "html": "<h3 style=\"text-align: center;\"> Understanding Dangerous Goods</h3><p></p>"
+              }
+            },
+            {
+              "id": "1bddf301-062c-46c0-b498-bedea9bd5bc4",
+              "type": "accordion",
+              "content": {
+                "items": [
+                  {
+                    "id": "7d6b6420-43a3-4756-b676-365a29372358",
+                    "items": [
+                      {
+                        "id": "985c9448-e167-4203-abe2-e43e11ca5523",
+                        "type": "text",
+                        "content": "<p>Articles or substances which are capable of posing a risk to health, safety, property or the environment and which are shown in the list of dangerous goods in the Technical Instructions or which are classified according to those Instructions.</p>"
+                      }
+                    ],
+                    "title": "What are Dangerous Goods (DG)?"
+                  },
+                  {
+                    "id": "3d6612db-43a8-4262-b0cb-ef81d65b18fa",
+                    "items": [
+                      {
+                        "id": "0c44fdce-8a96-4482-bfcd-3f4cf27c9df5",
+                        "type": "text",
+                        "content": "<p>Dangerous Goods are things that can cause harm to people, property, or the environment. They are listed or grouped in official safety instructions.</p>"
+                      }
+                    ],
+                    "title": "Simplified Definition"
+                  }
+                ],
+                "allowMultiple": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "08adc207-2cf8-44e1-86b7-590f82b7e540",
+          "title": "Classification of DG",
+          "blocks": [
+            {
+              "id": "5b4915e9-9cc2-4783-80b0-0e083dad0844",
+              "type": "text",
+              "content": {
+                "html": "<h3>How are DG classified?</h3><p>What are some examples of the different types?</p>"
+              }
+            },
+            {
+              "id": "b8a2e4e3-0f06-4b8c-bd7a-25d42f277426",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/screenshot-2026-06-05-101502-123a1ce7-2559-4d7b-96-9.png",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/screenshot-2026-06-05-101502-123a1ce7-2559-4d7b-96-9.png"
+              }
+            },
+            {
+              "id": "76f68c17-644e-4868-849a-bf8140f4277f",
+              "type": "flip-card-carousel",
+              "content": {
+                "loop": true,
+                "cards": [
+                  {
+                    "id": "bca72d7b-43d9-4eb1-923a-845fe248325a",
+                    "back": {
+                      "items": [
+                        {
+                          "id": "465b4e8f-d427-4089-a2d8-6e62d65974a5",
+                          "type": "image",
+                          "content": "media/14010-ecd3d93a-a753-41da-bf85-960948cf2864-10.jpeg",
+                          "originalContent": "media/14010-ecd3d93a-a753-41da-bf85-960948cf2864-10.jpeg"
+                        },
+                        {
+                          "id": "08f63e8d-931b-48c0-867a-449501b07e73",
+                          "type": "text",
+                          "content": "<p>Example: Ammunition, TNT</p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "Explosive",
+                      "imageAlt": "",
+                      "imageUrl": "",
+                      "subtitle": ""
+                    },
+                    "front": {
+                      "items": [
+                        {
+                          "id": "a91a054d-9487-498b-b292-b84ed43983df",
+                          "type": "text",
+                          "content": "<h3 style=\"text-align: center;\"><span style=\"font-size: 96px;\">Class 1</span></h3><p></p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "",
+                      "imageAlt": "",
+                      "imageUrl": "",
+                      "subtitle": ""
+                    }
+                  },
+                  {
+                    "id": "48e871a5-ad92-4f7b-a003-092eb0b048a4",
+                    "back": {
+                      "items": [
+                        {
+                          "id": "ed8c9d9f-9302-4ce8-abea-e7d241bb5321",
+                          "type": "image",
+                          "content": "media/shopping-a7a48787-5e70-4578-b7fd-51297056d316-11.webp",
+                          "originalContent": "media/shopping-a7a48787-5e70-4578-b7fd-51297056d316-11.webp"
+                        },
+                        {
+                          "id": "d495bae8-f25f-44d4-a7ee-f7554308ea85",
+                          "type": "text",
+                          "content": "<p>Example: Aerosols, Insecticides</p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "Flammable Gas",
+                      "imageAlt": "",
+                      "imageUrl": "",
+                      "subtitle": ""
+                    },
+                    "front": {
+                      "items": [
+                        {
+                          "id": "7df8969b-7152-46e4-9f28-f5c8b35364a3",
+                          "type": "text",
+                          "content": "<h3 style=\"text-align: center;\"><span style=\"font-size: 96px;\">Class 2</span></h3><p></p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "",
+                      "imageAlt": "",
+                      "imageUrl": "",
+                      "subtitle": ""
+                    }
+                  },
+                  {
+                    "id": "6a2f16f4-dd3a-4d21-9a49-8b67c5f0a9dc",
+                    "back": {
+                      "items": [
+                        {
+                          "id": "7ddbd478-38f0-42de-b46d-05d54623ad08",
+                          "type": "image",
+                          "content": "media/shopping-e23e48a6-c2b5-47f0-848c-cde7af0ef061-12.webp",
+                          "originalContent": "media/shopping-e23e48a6-c2b5-47f0-848c-cde7af0ef061-12.webp"
+                        },
+                        {
+                          "id": "65546cc4-bfd6-4555-ab83-9f88dad513aa",
+                          "type": "text",
+                          "content": "<p>Example: Paint, Gasoline</p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "Flammable Liquids",
+                      "subtitle": ""
+                    },
+                    "front": {
+                      "items": [
+                        {
+                          "id": "ea347fd1-b266-47d5-8f5a-066a5c0ee541",
+                          "type": "text",
+                          "content": "<h3 style=\"text-align: center;\"><span style=\"font-size: 96px;\">Class 3</span></h3><p></p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "",
+                      "subtitle": ""
+                    }
+                  },
+                  {
+                    "id": "14d2caa6-2c58-489c-b7b8-e8d1a45896ea",
+                    "back": {
+                      "items": [
+                        {
+                          "id": "a31dce19-2c05-4854-a61a-7b92deb59361",
+                          "type": "image",
+                          "content": "media/shopping-7dea3dbd-72d0-4965-8d1f-dd507d3435bf-13.webp",
+                          "originalContent": "media/shopping-7dea3dbd-72d0-4965-8d1f-dd507d3435bf-13.webp"
+                        },
+                        {
+                          "id": "4901e2d9-6692-4eb5-b448-794e5cb63427",
+                          "type": "text",
+                          "content": "<p>Example: Strike-anywhere matches, Magnesium powder</p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "Flammable Solids",
+                      "subtitle": ""
+                    },
+                    "front": {
+                      "items": [
+                        {
+                          "id": "70c8ec19-5942-44c4-820d-a194bfc0f7e6",
+                          "type": "text",
+                          "content": "<h3 style=\"text-align: center;\"><span style=\"font-size: 96px;\">Class 4</span></h3><p></p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "",
+                      "subtitle": ""
+                    }
+                  },
+                  {
+                    "id": "a899d75f-6ef5-4329-860f-edca76f46d49",
+                    "back": {
+                      "items": [
+                        {
+                          "id": "676f256a-b737-48d8-8e6a-58af1c085886",
+                          "type": "image",
+                          "content": "media/shopping-36b63bb4-53a6-4bc5-b330-a8f39b71e4f5-14.webp",
+                          "originalContent": "media/shopping-36b63bb4-53a6-4bc5-b330-a8f39b71e4f5-14.webp"
+                        },
+                        {
+                          "id": "160b03a0-e5e5-4ac7-8b9b-608ca9993543",
+                          "type": "text",
+                          "content": "<p>Example: Bleaching powder</p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "Oxidizing substances and organic peroxides",
+                      "subtitle": ""
+                    },
+                    "front": {
+                      "items": [
+                        {
+                          "id": "ad4d3391-9c7f-4d88-aa3c-d24b7587d39a",
+                          "type": "text",
+                          "content": "<h3 style=\"text-align: center;\"><span style=\"font-size: 96px;\">Class 5</span></h3><p></p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "",
+                      "subtitle": ""
+                    }
+                  },
+                  {
+                    "id": "bbcacfe6-dde0-4f94-a5a1-ac19ef981b3c",
+                    "back": {
+                      "items": [
+                        {
+                          "id": "e07f3c79-909e-435a-b5f3-1c473986eb3f",
+                          "type": "image",
+                          "content": "media/shopping-0e5bb44f-f0b8-4cc6-b832-7fb6c70fb33b-15.webp",
+                          "originalContent": "media/shopping-0e5bb44f-f0b8-4cc6-b832-7fb6c70fb33b-15.webp"
+                        },
+                        {
+                          "id": "9dc9f800-4e29-4ca0-9330-d0fbe05181aa",
+                          "type": "text",
+                          "content": "<p>Example: Arsenic, Pesticides, Research viruses</p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "Toxic and infectious substances",
+                      "subtitle": ""
+                    },
+                    "front": {
+                      "items": [
+                        {
+                          "id": "54dd70fc-005f-49e0-9429-653e1023c315",
+                          "type": "text",
+                          "content": "<h3 style=\"text-align: center;\"><span style=\"font-size: 96px;\">Class 6</span></h3><p></p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "",
+                      "subtitle": ""
+                    }
+                  },
+                  {
+                    "id": "dbc06c8a-14b1-4329-80d1-f6cfcc6572fb",
+                    "back": {
+                      "items": [
+                        {
+                          "id": "180fbc30-7979-43e3-b95c-ef90da9a9f86",
+                          "type": "image",
+                          "content": "media/screenshot-2026-06-05-110105-c11a9963-191f-45cd-81-16.png",
+                          "originalContent": "media/screenshot-2026-06-05-110105-c11a9963-191f-45cd-81-16.png"
+                        },
+                        {
+                          "id": "a838388c-cc7e-4196-bb00-02b34926bf09",
+                          "type": "text",
+                          "content": "<p>Example: Nuclear research material</p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "Radioactive materials",
+                      "subtitle": ""
+                    },
+                    "front": {
+                      "items": [
+                        {
+                          "id": "eeda5008-c0ce-478d-a3d2-f98bc564357c",
+                          "type": "text",
+                          "content": "<h3 style=\"text-align: center;\"><span style=\"font-size: 96px;\">Class 7</span></h3><p></p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "",
+                      "subtitle": ""
+                    }
+                  },
+                  {
+                    "id": "60f01bee-b6da-4088-9c3e-bc9ca9f8907c",
+                    "back": {
+                      "items": [
+                        {
+                          "id": "ee2e8974-2a2b-4477-bb93-d709184985d1",
+                          "type": "image",
+                          "content": "media/shopping-d5fa3aa8-5585-463b-837e-d0715a111eee-17.webp",
+                          "originalContent": "media/shopping-d5fa3aa8-5585-463b-837e-d0715a111eee-17.webp"
+                        },
+                        {
+                          "id": "c8cdbc6d-ef4f-4256-bc88-65f9f291ba62",
+                          "type": "text",
+                          "content": "<p>Example: Acidic substances</p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "Corrosives",
+                      "subtitle": ""
+                    },
+                    "front": {
+                      "items": [
+                        {
+                          "id": "7bcd80b0-1993-4b36-ae1d-3f4a1027410a",
+                          "type": "text",
+                          "content": "<h3 style=\"text-align: center;\"><span style=\"font-size: 96px;\">Class 8</span></h3><p></p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "",
+                      "subtitle": ""
+                    }
+                  },
+                  {
+                    "id": "4b31fc91-7204-4876-9ce5-fdb9a0a1fcee",
+                    "back": {
+                      "items": [
+                        {
+                          "id": "03bc1697-6aca-4926-ace6-03434615b967",
+                          "type": "image",
+                          "content": "media/download-d4b55e61-1d94-4ae3-8618-987b4fcc2b2b-18.png",
+                          "originalContent": "media/download-d4b55e61-1d94-4ae3-8618-987b4fcc2b2b-18.png"
+                        },
+                        {
+                          "id": "7da58759-2c47-43b4-9b86-f34d9f2e6aeb",
+                          "type": "text",
+                          "content": "<p>Example: Magnetized materials, Engines, Air Bag modules, Dry ice</p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "Miscellaneous ",
+                      "subtitle": ""
+                    },
+                    "front": {
+                      "items": [
+                        {
+                          "id": "e233024f-b798-4dcf-88b3-7e87a768cfe5",
+                          "type": "text",
+                          "content": "<h3 style=\"text-align: center;\"><span style=\"font-size: 96px;\">Class 9</span></h3><p></p>"
+                        }
+                      ],
+                      "style": "outlined",
+                      "title": "",
+                      "subtitle": ""
+                    }
+                  }
+                ],
+                "style": "outlined",
+                "autoplay": false,
+                "showDots": true,
+                "aspectRatio": "16:9",
+                "flipTrigger": "click",
+                "cardsPerView": 1,
+                "flipDirection": "horizontal",
+                "showNavigation": true,
+                "autoplayInterval": 5000
+              }
+            }
+          ]
+        },
+        {
+          "id": "55c37ed3-1e1e-4def-9732-2983dc1d312f",
+          "title": "Identification of DG",
+          "blocks": [
+            {
+              "id": "97d99c57-27d7-44b0-ab2c-fb433044b69d",
+              "type": "text",
+              "content": {
+                "html": "<h3>Identification of Dangerous Goods</h3><p>All ground staff must be trained to spot dangerous goods (DGs) belonging to passengers. If a passenger or crew member is suspected of carrying DGs that are not allowed or approved, staff should check and gather more details about the item(s).</p><p></p>"
+              }
+            },
+            {
+              "id": "f7667970-f30a-4d3b-a286-4a0bed999113",
+              "type": "text",
+              "content": {
+                "html": "<p>How to identify DG?</p>"
+              }
+            },
+            {
+              "id": "5b8da738-720b-4a9a-bbb1-d5c33864ed9c",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/screenshot-2026-06-05-111706-3f25f59f-5046-4b5a-b5-19.png",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/screenshot-2026-06-05-111706-3f25f59f-5046-4b5a-b5-19.png"
+              }
+            },
+            {
+              "id": "f75d83a1-468d-4b89-a673-37023984e982",
+              "type": "text",
+              "content": {
+                "html": "<h3>Hidden DG</h3><p>Some dangerous goods (DGs) may be hidden inside normal-looking cargo. They might be part of a product that seems harmless. Common examples include items that contain chemicals, batteries, or pressurised materials.</p>"
+              }
+            },
+            {
+              "id": "75b292e3-b584-4bcd-9bb5-f092a9c33e3a",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/screenshot-2026-06-05-112333-4eab7e09-9164-45b3-af-20.png",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/screenshot-2026-06-05-112333-4eab7e09-9164-45b3-af-20.png"
+              }
+            },
+            {
+              "id": "e9b41247-3d5c-4454-99b9-34c7fac53952",
+              "type": "tabs",
+              "content": {
+                "items": [
+                  {
+                    "id": "fbea6425-db69-4e83-86d3-14bd510837b4",
+                    "items": [
+                      {
+                        "id": "7753e880-3db5-44fb-8264-8e29bfc55122",
+                        "type": "image",
+                        "content": "media/gettyimages-808894866-5a0fdc63ec2f640036506a24-f29-21.jpeg",
+                        "originalContent": "media/gettyimages-808894866-5a0fdc63ec2f640036506a24-f29-21.jpeg"
+                      },
+                      {
+                        "id": "f77c49a0-2ab0-435f-b0ec-cb6cfa0d576f",
+                        "type": "text",
+                        "content": "<p><strong>Examples:</strong> Scuba tanks, vest bottles, or other cylinders containing compressed gases (air, oxygen, etc.); high intensity diving lamps that can get extremely hot.</p>"
+                      },
+                      {
+                        "id": "6a51c310-6835-4fb3-b237-645e9d428f41",
+                        "type": "text",
+                        "content": "<p><strong>Dangers:</strong> Risk of explosion or fire if gas leaks or lamps overheat</p>"
+                      },
+                      {
+                        "id": "aecd12c9-8c6f-4c31-a2af-03283bec3a8d",
+                        "type": "text",
+                        "content": "<p><strong>Things to note:</strong> Bulbs or batteries must be disconnected before transport.</p>"
+                      }
+                    ],
+                    "label": "Diving Equipment"
+                  },
+                  {
+                    "id": "b58c83c9-2c23-4b25-b1ba-a79033d008c9",
+                    "items": [
+                      {
+                        "id": "93836898-338f-49cf-bf11-002907e9b166",
+                        "type": "image",
+                        "content": "media/61dfmxmxgnl-ac-uf1000-1000-ql80-4cbc50e7-d0d2-4d6d-22.jpeg",
+                        "originalContent": "media/61dfmxmxgnl-ac-uf1000-1000-ql80-4cbc50e7-d0d2-4d6d-22.jpeg"
+                      },
+                      {
+                        "id": "2f36ca94-ba47-434c-8e7a-7d6e21881878",
+                        "type": "text",
+                        "content": "<p><strong>Examples:</strong> Camping gear like gas stoves, lanterns, and fuel bottles may contain flammable gases (butane, propane), liquids (kerosene, gasoline), or solids (hexamine tablets, matches).</p>"
+                      },
+                      {
+                        "id": "995beef4-1a1a-4812-985e-339d4f12f921",
+                        "type": "text",
+                        "content": "<p><strong>Dangers:</strong> Fire and explosion risk if not handled or packed properly</p>"
+                      },
+                      {
+                        "id": "ac3aa2c4-9705-4623-9293-ee3ed62de828",
+                        "type": "text",
+                        "content": "<p><strong>Things to note:</strong> Always check for leaks and keep fuel sources separated and secured.</p>"
+                      }
+                    ],
+                    "label": "Camping Equipment"
+                  },
+                  {
+                    "id": "36f77733-0000-4b44-83b1-87b65c1de6f3",
+                    "items": [
+                      {
+                        "id": "e82275d1-c6b3-4f6e-af4f-6e2f3c581ede",
+                        "type": "image",
+                        "content": "media/flammable-materials-4-434b43fc-6db1-4d88-ad31-7df2-23.jpeg",
+                        "originalContent": "media/flammable-materials-4-434b43fc-6db1-4d88-ad31-7df2-23.jpeg"
+                      },
+                      {
+                        "id": "1ac6feee-c655-4095-94dc-2d8ef1076644",
+                        "type": "text",
+                        "content": "<p><span><strong>Examples:</strong> Everyday items like paints, adhesives, polishes, aerosols, bleach, oven or drain cleaners, and matches may contain flammable or corrosive substances.</span></p>"
+                      },
+                      {
+                        "id": "fc784636-5791-4dd1-936d-05421aadefcb",
+                        "type": "text",
+                        "content": "<p><span><strong>Dangers:</strong> Fire, explosion, or chemical burns if spilled or mishandled.</span></p>"
+                      },
+                      {
+                        "id": "2cc3e1ab-63e8-4cad-a084-49229dd14b38",
+                        "type": "text",
+                        "content": "<p><strong>Things to note: </strong>Always check labels and pack securely before transport.</p>"
+                      }
+                    ],
+                    "label": "Household Goods"
+                  }
+                ],
+                "orientation": "vertical"
+              }
+            },
+            {
+              "id": "ab1e2f84-48a7-4264-9b89-00652f4369a1",
+              "type": "text",
+              "content": {
+                "html": "<h3>Handling/Reporting DG</h3><p>If encountering DG how do we proceed from there?</p>"
+              }
+            },
+            {
+              "id": "77c8a9d5-42dd-4258-bc7e-cb31bb0dfc5f",
+              "type": "accordion",
+              "content": {
+                "items": [
+                  {
+                    "id": "5925e321-3a65-4c08-a7ee-7a4c5273e135",
+                    "items": [
+                      {
+                        "id": "8f0d259b-e547-4c48-a10f-d3d04f254e55",
+                        "type": "text",
+                        "content": "<p>When the person offering the item cannot prove it’s not dangerous goods (DG), refuse to accept the container for transport.</p>"
+                      }
+                    ],
+                    "title": "If unsure"
+                  },
+                  {
+                    "id": "d23f7af4-46e0-4476-9255-fc3f3c5809d4",
+                    "items": [
+                      {
+                        "id": "74eb476d-b627-4554-840d-db8d199c199e",
+                        "type": "text",
+                        "content": "<p>The person must remove and dispose of the item safely outside airport property.</p>"
+                      }
+                    ],
+                    "title": "If not immediately dangerous"
+                  },
+                  {
+                    "id": "07507aba-04fd-4424-9ef8-ab4abcde8a34",
+                    "items": [
+                      {
+                        "id": "6052b077-7831-4ccb-b1ca-8e03a065058d",
+                        "type": "text",
+                        "content": "<p>Report immediately to your Supervisor/Manager, Airport Emergency Services (AES), Airport Police, or Seletar Airport Operations (SAO).</p>"
+                      }
+                    ],
+                    "title": "If disposal cannot be done safely"
+                  },
+                  {
+                    "id": "fc03aaf2-bc23-4a55-bd94-d41c2699f189",
+                    "items": [
+                      {
+                        "id": "89953418-31e9-4492-a4d5-15aaab03ebf3",
+                        "type": "text",
+                        "content": "<p>Any staff who discovers a dangerous goods (DG) accident or incident must inform their Supervisor/Manager, Airport Police, Airport Emergency Services (AES), Seletar Airport Operations (SAO), CAAS, and CAG.</p>"
+                      }
+                    ],
+                    "title": "Immediate Reporting"
+                  }
+                ],
+                "allowMultiple": false
+              }
+            }
+          ]
+        },
+        {
+          "id": "59c8c8f0-ac39-4abc-b11f-f81cd014e013",
+          "title": "Emergency Ground Procedure",
+          "blocks": [
+            {
+              "id": "7f97aaaf-f8cc-421f-baf7-404636542ee5",
+              "type": "text",
+              "content": {
+                "html": "<h3>What to do during an emergency?</h3><p>How should it be handled</p>"
+              }
+            },
+            {
+              "id": "d7bb130d-81a4-4b11-a740-144136cb5aa8",
+              "type": "image",
+              "content": {
+                "alt": "",
+                "src": "media/screenshot-2026-06-05-114246-33446a5c-26b6-4acb-82-24.png",
+                "align": "center",
+                "width": "large",
+                "originalSrc": "media/screenshot-2026-06-05-114246-33446a5c-26b6-4acb-82-24.png"
+              }
+            }
+          ]
+        },
+        {
+          "id": "cca455b9-1e9d-4059-bf4e-7793f04b5597",
+          "title": "Test Your Understanding",
+          "blocks": [
+            {
+              "id": "ef9cf55a-3824-4970-8837-a444410a560c",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "5fe7d21f-1fcb-4d98-a703-d3b4052ec851",
+                    "text": "Any cargo transported by aircraft.",
+                    "correct": false
+                  },
+                  {
+                    "id": "dc1082d6-6ace-4a35-aa1d-0eaae1d7aac5",
+                    "text": "Passenger baggage exceeding the weight limit.",
+                    "correct": false
+                  },
+                  {
+                    "id": "37c49997-e067-4615-888a-a94a95a304e1",
+                    "text": "Substances or articles that can pose risks to health, safety, property, or the environment during transportation.",
+                    "correct": true
+                  },
+                  {
+                    "id": "a5d63d13-d8d9-47e8-910b-47407bb4c5f2",
+                    "text": "Goods transported only on international flights.",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Dangerous goods are substances or articles that may present risks to people, property, or the environment if not handled, packaged, or transported correctly.",
+                  "incorrect": "Try again."
+                },
+                "question": "What are dangerous goods in aviation?",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "4dbe5a29-411d-42d1-9f02-1f6a047217ae",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "4350b7cb-0249-4472-a48f-42f865f927fb",
+                    "text": "To identify the appropriate packaging, labelling, and handling requirements.",
+                    "correct": true
+                  },
+                  {
+                    "id": "669207e6-6928-4c6c-b3c8-4f1ee497e455",
+                    "text": "To determine the price of transporting the goods.",
+                    "correct": false
+                  },
+                  {
+                    "id": "6e70c9c2-45f9-4602-8e41-87f39b7fd94d",
+                    "text": "To decide which airline can transport them.",
+                    "correct": false
+                  },
+                  {
+                    "id": "937b17a7-cedd-4d5d-b702-39fb07375fe3",
+                    "text": "To reduce the weight of the cargo.",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Different dangerous goods present different hazards. Classification ensures that each type is packaged, labelled, and handled according to its specific risks to maintain safety.",
+                  "incorrect": "Try again."
+                },
+                "question": "Why is it important to classify dangerous goods into different categories?",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "cc0c208f-d79c-44a4-86fe-7c3c8afd6f93",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "f4fc910b-c1b2-47cd-88dd-f724fdbff101",
+                    "text": "International Civil Aviation Organization (ICAO)",
+                    "correct": false
+                  },
+                  {
+                    "id": "1a08f4b9-499f-48fc-a216-111eb7bdbaa8",
+                    "text": "Civil Aviation Authority of Singapore (CAAS)",
+                    "correct": false
+                  },
+                  {
+                    "id": "be941fe2-fe08-4c9d-a3a0-46361483848d",
+                    "text": "International Air Transport Association (IATA)",
+                    "correct": true
+                  },
+                  {
+                    "id": "e5fd2a3d-9392-4d7f-8d09-59b5a84d758b",
+                    "text": "World Health Organization (WHO)",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! The International Air Transport Association (IATA) classifies dangerous goods into nine hazard classes, providing standardized requirements for their safe transport by air.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which organization classifies dangerous goods into nine hazard classes for air transport?",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "b9d594bf-c1c2-46ff-96ac-95b5e3a3e017",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "264c3de5-e989-4651-b44a-6847b55f437a",
+                    "text": "True",
+                    "correct": false
+                  },
+                  {
+                    "id": "57ba257d-236c-429f-93cf-cc4904934e45",
+                    "text": "False",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Dangerous goods can pose risks to health, safety, property, and the environment if they are not transported safely.",
+                  "incorrect": "Try again."
+                },
+                "question": "Dangerous goods only pose a risk to people and do not affect property or the environment.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "714e08df-a1c8-42e9-b522-3ba50d81d69c",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "5cf4e410-a001-479f-a80d-f415f700d360",
+                    "text": "True",
+                    "correct": true
+                  },
+                  {
+                    "id": "bdcff88b-839b-4744-bfdd-a44ec492f465",
+                    "text": "False",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Proper packaging, labelling, and handling are essential safety measures that help prevent leaks, fires, contamination, and other incidents during transport.",
+                  "incorrect": "Try again."
+                },
+                "question": "Proper packaging and handling of dangerous goods help reduce the risk of accidents during air transportation.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "ce55ec25-feb7-4c02-b855-7b805f0f36c3",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "784eeca5-de84-4875-9639-8cb3ac5f8c56",
+                    "text": "True",
+                    "correct": true
+                  },
+                  {
+                    "id": "742c06f1-aa02-4d3c-8d15-b36bc8f0b88a",
+                    "text": "False",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Each dangerous goods class has its own characteristics and hazards, which determine the appropriate packaging, labelling, and handling procedures.",
+                  "incorrect": "Try again."
+                },
+                "question": "Different dangerous goods may have different packaging and handling requirements depending on their classification.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "2d51cf34-8009-4c9e-97f2-be42b7942c19",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "ac3a6dba-8194-4ff4-9082-01fb5bbcfdb3",
+                    "text": "To protect passengers and crew",
+                    "correct": true
+                  },
+                  {
+                    "id": "e1bc81c2-9501-452e-be89-23c614ecdc30",
+                    "text": "To protect property",
+                    "correct": true
+                  },
+                  {
+                    "id": "8a37449a-0e83-4da8-8ba8-839c879c5226",
+                    "text": "To protect the environment",
+                    "correct": true
+                  },
+                  {
+                    "id": "6b8dde02-a97e-4e65-bacc-6775e0b56f4b",
+                    "text": "To prevent accidents and incidents",
+                    "correct": true
+                  },
+                  {
+                    "id": "e8155e6d-755c-4c46-99a5-f5a4c2305bd5",
+                    "text": "To reduce the cost of airline tickets",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Dangerous goods regulations are designed to minimize risks to people, property, and the environment while preventing accidents during transportation. They are not intended to reduce airline operating costs or ticket prices.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which of the following are reasons why dangerous goods are carefully regulated in aviation?",
+                "questionType": "multiple-select"
+              }
+            },
+            {
+              "id": "df2863e8-2b9e-40a8-b0a1-61199297c94c",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "1af415ee-11d2-42dd-8624-e68e105e3c8a",
+                    "text": "Correct classification",
+                    "correct": true
+                  },
+                  {
+                    "id": "e9a86bdc-df80-4ebe-b3b9-f1d5f551d32a",
+                    "text": "Appropriate packaging",
+                    "correct": true
+                  },
+                  {
+                    "id": "54a7f38f-3bf4-4423-8b65-09cda6ce1582",
+                    "text": "Proper labelling",
+                    "correct": true
+                  },
+                  {
+                    "id": "9b88d8c2-6b55-474e-b519-0e49ec6ca908",
+                    "text": "Following handling requirements",
+                    "correct": true
+                  },
+                  {
+                    "id": "bbbe4a9f-03cb-45b0-b939-ea52c0fbd34f",
+                    "text": "Ignoring international regulations if the shipment is urgent",
+                    "correct": false
+                  },
+                  {
+                    "id": "391e7c4a-17f9-4eec-9b19-a5e132251536",
+                    "text": "Understanding the hazards of the goods",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Safe transport of dangerous goods depends on understanding their hazards and following the correct classification, packaging, labelling, and handling requirements. International regulations must always be followed, regardless of urgency.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which of the following are important when transporting dangerous goods by air?",
+                "questionType": "multiple-select"
+              }
+            },
+            {
+              "id": "1c21378e-b873-435c-9695-afd6fff038ea",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "dfbdec2f-b40b-4801-a6d4-d959ba871baa",
+                    "text": "To make them easier to sell.",
+                    "correct": false
+                  },
+                  {
+                    "id": "ab3bcd33-c1d4-4291-abe8-e66309537cda",
+                    "text": "To provide more specific information about their hazards and handling requirements.",
+                    "correct": true
+                  },
+                  {
+                    "id": "c3d3f55e-6c70-4650-aa4d-af89c3ee099f",
+                    "text": "To determine which airline can carry them.",
+                    "correct": false
+                  },
+                  {
+                    "id": "30ca7816-7d02-49c7-933c-b7b7392366c0",
+                    "text": "To reduce the amount of documentation required.",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Subcategories provide more detailed information about the specific hazards within a dangerous goods class. This ensures the correct safety measures are applied during packaging, handling, and transportation.",
+                  "incorrect": "Try again."
+                },
+                "question": "Why are some dangerous goods divided into subcategories?",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "5a006ab2-d728-40db-8fdd-b0a2eb92e3f9",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "56595424-0ad9-4f86-8b74-801c1d990796",
+                    "text": "True",
+                    "correct": true
+                  },
+                  {
+                    "id": "84652bd4-0de8-4240-8639-8b338f5e2afd",
+                    "text": "False",
+                    "correct": false
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Knowing the classification of dangerous goods allows personnel to follow the correct procedures for packaging, labelling, storage, and handling, reducing the likelihood of accidents.",
+                  "incorrect": "Try again."
+                },
+                "question": "Understanding the classification of dangerous goods helps aviation personnel transport them more safely.",
+                "questionType": "multiple-choice"
+              }
+            },
+            {
+              "id": "218f49b8-c7a1-4709-8d7f-af787b7a44ee",
+              "type": "knowledge-check",
+              "content": {
+                "options": [
+                  {
+                    "id": "6f653c35-fd3f-4038-acaf-2ce3145a06e3",
+                    "text": "Dangerous goods may pose risks to health.",
+                    "correct": true
+                  },
+                  {
+                    "id": "3f232b6e-fbce-4c81-906c-26b6f3570c37",
+                    "text": "Dangerous goods may pose risks to the environment.",
+                    "correct": true
+                  },
+                  {
+                    "id": "f9d256a1-b4e7-435e-a176-aad6628046e1",
+                    "text": "Dangerous goods should be handled according to their classification.",
+                    "correct": true
+                  },
+                  {
+                    "id": "326f0f2b-8897-4475-85bc-a1bfb6033e0a",
+                    "text": "All dangerous goods have the same packaging requirements.",
+                    "correct": false
+                  },
+                  {
+                    "id": "e07cdbdd-3425-4f41-9c4a-f35a49684574",
+                    "text": "Understanding dangerous goods classifications contributes to aviation safety.",
+                    "correct": true
+                  }
+                ],
+                "feedback": {
+                  "correct": "Correct! Dangerous goods can present different types of hazards depending on their properties. Their classification determines the appropriate safety requirements for packaging, labelling, and handling. Different classes often have different handling requirements, so not all dangerous goods use the same packaging procedures.",
+                  "incorrect": "Try again."
+                },
+                "question": "Which of the following statements about dangerous goods are TRUE?",
+                "questionType": "multiple-select"
+              }
+            }
+          ]
+        },
+        {
+          "id": "e8818e93-ead6-41d8-b69c-c9b58b61b973",
+          "title": "New Lesson",
+          "blocks": []
+        }
+      ]
+    }
+  ]
+}

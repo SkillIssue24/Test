@@ -31,148 +31,40 @@ const escapeHtml = (str) => {
   if (str == null) return ''
   const div = document.createElement('div')
   div.textContent = String(str)
-  // textContent -> innerHTML escapes & < > (and non-breaking space) but NOT
-  // quotes — quotes only need escaping in attribute-value serialization, not
-  // text content. escapeHtml output is interpolated into both element text AND
-  // double/single-quoted attributes across the player, so escape quotes here
-  // too; otherwise course-controlled values can break out of an attribute.
-  return div.innerHTML.replace(/"/g, '&quot;').replace(/'/g, '&#39;')
-}
-
-// Open inline links in a new tab so they survive a SCORM/LMS iframe embed
-// (a current-window link navigates the frame itself). Skips in-page fragments
-// and mailto:/tel:.
-const forceInlineLinkTargets = (root) => {
-  root.querySelectorAll('a[href]').forEach((a) => {
-    const href = (a.getAttribute('href') || '').trim()
-    if (!href || href.startsWith('#')) return
-    const scheme = (href.match(/^([a-z][a-z0-9+.-]*):/i) || [])[1]
-    if (scheme && (scheme.toLowerCase() === 'mailto' || scheme.toLowerCase() === 'tel')) return
-    a.setAttribute('target', '_blank')
-    a.setAttribute('rel', 'noopener noreferrer')
-  })
+  return div.innerHTML
 }
 
 const sanitizeHtml = (html) => {
   if (html == null) return ''
-  const div = document.createElement('div')
   // Use DOMPurify when available (recommended)
   if (window.DOMPurify) {
-    div.innerHTML = DOMPurify.sanitize(html, { ADD_ATTR: ['data-*'] })
-  } else {
-    // Fallback: basic sanitization for offline SCORM without DOMPurify
-    // Removes dangerous tags and event handlers but preserves safe HTML
-    div.innerHTML = html
-    // Remove dangerous tags
-    div.querySelectorAll('script,iframe,object,embed,form,base,style,link,svg,math').forEach(el => el.remove())
-    // Remove event handler attributes
-    div.querySelectorAll('*').forEach(el => {
-      Array.from(el.attributes).forEach(attr => {
-        if (attr.name.startsWith('on') || attr.value.toLowerCase().includes('javascript:')) {
-          el.removeAttribute(attr.name)
-        }
-      })
-    })
+    return DOMPurify.sanitize(html, { ADD_ATTR: ['data-*'] })
   }
-  forceInlineLinkTargets(div)
+  // Fallback: basic sanitization for offline SCORM without DOMPurify
+  // Removes dangerous tags and event handlers but preserves safe HTML
+  const div = document.createElement('div')
+  div.innerHTML = html
+  // Remove dangerous tags
+  div.querySelectorAll('script,iframe,object,embed,form,base,style,link,svg,math').forEach(el => el.remove())
+  // Remove event handler attributes
+  div.querySelectorAll('*').forEach(el => {
+    Array.from(el.attributes).forEach(attr => {
+      if (attr.name.startsWith('on') || attr.value.toLowerCase().includes('javascript:')) {
+        el.removeAttribute(attr.name)
+      }
+    })
+  })
   return div.innerHTML
 }
 
-// Sanitize a URL for use in href/src attributes.
-// Allowlist of safe schemes (plus scheme-less relative/anchor/protocol-relative
-// URLs and media data URLs). Everything else — javascript:, vbscript:,
-// data:text/html, file:, etc. — is blocked. Control characters and whitespace
-// are stripped before scheme detection because browsers strip intra-scheme
-// TAB/CR/LF, so "java\tscript:" would otherwise re-form into javascript:.
-const SAFE_URL_SCHEMES = new Set(['http', 'https', 'mailto', 'tel', 'blob'])
+// Sanitize URL to prevent javascript: protocol
 const sanitizeUrl = (url) => {
   if (url == null) return ''
-  const raw = String(url)
-  // Strip ASCII control chars (incl. TAB/CR/LF) + spaces for the scheme test only.
-  const probe = raw.replace(/[\u0000-\u0020]+/g, '').toLowerCase()
-  // Belt and suspenders: XML/SVG/HTML data URLs (matched on the MIME part
-  // before the comma) are never legitimate on this platform. The allowlist
-  // below already excludes them; this makes the intent explicit and unmissable.
-  if (/^data:[^,]*(?:xml|svg|html)/.test(probe)) return '#blocked'
-  const schemeMatch = probe.match(/^([a-z][a-z0-9+.-]*):/)
-  // No scheme => relative path, query, fragment, or protocol-relative //host.
-  if (!schemeMatch) return raw
-  const scheme = schemeMatch[1]
-  if (SAFE_URL_SCHEMES.has(scheme)) return raw
-  // Permit only raster media data URLs. Excludes data:image/svg+xml (SVG can
-  // carry script and execute when navigated to via href/iframe) and never
-  // allows data:text/html or other data: payloads.
-  if (scheme === 'data' && /^data:(image\/(?!svg)|audio\/|video\/)/.test(probe)) return raw
-  return '#blocked'
-}
-
-// Stricter sanitizer for *navigable* sinks — links (href), embeds (iframe src),
-// and document downloads. In addition to sanitizeUrl's scheme allowlist, it
-// rejects URLs that point at an SVG/XML document: these are never a legitimate
-// link/embed target here, and SVG/XML can execute script when navigated to or
-// rendered as a document. Image <img src> uses sanitizeUrl directly, so https
-// SVG *images* (e.g. an externally hosted logo/icon) still render.
-const sanitizeNavUrl = (url) => {
-  const safe = sanitizeUrl(url)
-  if (safe === '#blocked') return safe
-  // Strip control chars + whitespace before inspecting — browsers strip these
-  // from URLs, so "x.svg\t" would otherwise slip the $-anchored extension test
-  // yet still navigate to x.svg.
-  const probe = String(safe).replace(/[ - ]+/g, '').toLowerCase()
-  // Navigable sinks (links, iframes, downloads) have no legitimate data: use,
-  // and a raster-MIME data URL can still carry an SVG/XML payload after the
-  // comma, so block data: entirely here. (<img>/<audio>/<video> use sanitizeUrl
-  // directly and still accept raster data URLs.)
-  if (probe.startsWith('data:')) return '#blocked'
-  // Reject links/embeds that point at an SVG/XML document by extension.
-  const path = probe.split(/[?#]/)[0]
-  if (/\.(svg|svgz|xml|xhtml|xht)$/.test(path)) return '#blocked'
-  return safe
-}
-
-// Cap the base so the download value stays within HTTP header / URL limits.
-const MAX_DOWNLOAD_BASE_LENGTH = 200
-
-// Sanitize a user-facing filename for use as an unquoted Content-Disposition
-// download name / `&download=` query value. Supabase serves the value
-// unquoted, so a name with whitespace or a URL/header delimiter is truncated
-// by the browser at the first such character and loses its extension - replace
-// only those dangerous chars with `_`, preserving Unicode letters/digits so a
-// non-Latin name (Cyrillic/CJK) survives. Mirror of sanitizeDownloadFilename
-// in the builder (builder/src/lib/mediaFilename.ts) - keep in sync.
-const sanitizeDownloadName = (name) => {
-  const trimmed = String(name || '').trim()
-  if (!trimmed) return 'download'
-  const lastDot = trimmed.lastIndexOf('.')
-  const hasExt = lastDot > 0 && lastDot < trimmed.length - 1
-  const base = hasExt ? trimmed.slice(0, lastDot) : trimmed
-  const ext = hasExt ? trimmed.slice(lastDot + 1) : ''
-  const clean = (s) => s
-    .replace(/[\s"'\\&=?#+/@:;,<>|*%]+/g, '_')
-    .replace(/_+/g, '_')
-    .replace(/^[_.]+|[_.]+$/g, '')
-  const safeBase = clean(base).slice(0, MAX_DOWNLOAD_BASE_LENGTH).replace(/[_.]+$/, '') || 'download'
-  const safeExt = clean(ext)
-  return safeExt ? `${safeBase}.${safeExt}` : safeBase
-}
-
-// Force a download for Slate-hosted (Supabase Storage) document URLs. The HTML
-// `download` attribute is ignored by browsers for cross-origin URLs, which is
-// why a document opens a blank tab in preview/hosted/review instead of
-// downloading. Supabase's `&download=` query param is applied server-side into
-// `Content-Disposition: attachment` (honoured cross-origin) and is NOT part of
-// the signed token, so appending it needs no re-signing. Relative export paths
-// (same-origin, the `download` attribute works) and third-party provider URLs
-// (Google Drive, Dropbox, etc.) are returned untouched.
-const documentDownloadUrl = (url, filename) => {
-  const u = String(url || '')
-  if (!u.includes('/storage/v1/object/')) return u
-  if (/[?&]download=/.test(u)) return u
-  const hashIdx = u.indexOf('#')
-  const path = hashIdx === -1 ? u : u.slice(0, hashIdx)
-  const frag = hashIdx === -1 ? '' : u.slice(hashIdx)
-  const sep = path.includes('?') ? '&' : '?'
-  return `${path}${sep}download=${encodeURIComponent(sanitizeDownloadName(filename))}${frag}`
+  const trimmed = String(url).trim().toLowerCase()
+  if (trimmed.startsWith('javascript:') || trimmed.startsWith('data:text/html')) {
+    return '#blocked'
+  }
+  return url
 }
 
 // Sanitize CSS class name(s) - only allow safe characters, reject reserved prefixes
@@ -186,16 +78,6 @@ const sanitizeClassName = (className) => {
     .filter(cls => /^[a-zA-Z_-][a-zA-Z0-9_-]*$/.test(cls))
     .filter(cls => !RESERVED_CLASS_PREFIXES.some(p => cls.toLowerCase().startsWith(p)))
     .join(' ')
-}
-
-// Restrict an enum-like block option to a safe CSS token (lowercase letters,
-// digits, hyphens) before interpolating it into a class/style attribute.
-// Block-option enums are already validated on import, so this is defense in
-// depth against a hand-crafted course.json reaching these raw interpolations.
-const cssToken = (value, fallback = '') => {
-  if (typeof value !== 'string') return fallback
-  const cleaned = value.toLowerCase().replace(/[^a-z0-9-]/g, '')
-  return cleaned || fallback
 }
 
 // Detect the hosting provider for a document URL and return its display name,
@@ -2534,10 +2416,9 @@ class SlatePlayer {
     this.vimeoPendingInits = []  // Queue of pending Vimeo player initializations
 
     // Share & Track state
-    this.trackingConfig = null  // { linkId, requireEmail, requireConsent, supabaseUrl, supabaseKey, linkAccessCapability? }
+    this.trackingConfig = null  // { linkId, requireEmail, requireConsent, supabaseUrl, supabaseKey }
     this.viewerConsent = null   // null = not asked, true = consented, false = declined
     this.viewerId = null        // Set after viewer registration
-    this.trackingCapability = null  // Opaque per-view credential for analytics writes
     this.viewerEmail = null
     this.viewerName = null
 
@@ -3051,14 +2932,6 @@ class SlatePlayer {
         ...block.content,
         ...translatedBlock.content,
       }
-      // Instructions: translated value or nothing. A translation created
-      // before the instructions field existed has no translated value for
-      // it — render nothing rather than leaking the source-language string
-      // into a translated course (translated-or-absent rule for
-      // learner-visible text).
-      if (block.content.instructions && !translatedBlock.content.instructions) {
-        merged.instructions = undefined
-      }
       // Merge options for MC/MS
       if (block.content.options && translatedBlock.content.options) {
         merged.options = block.content.options.map((opt, idx) => {
@@ -3327,6 +3200,20 @@ class SlatePlayer {
   // ============================================
 
   async init() {
+    // For SCORM thin packages, wait for scorm-init to be received
+    // This ensures suspend_data is cached before we try to restore it
+    // Only do this for thin packages (detected by SCORM_THIN_READY flag)
+    if (this.scorm && window.SCORM_THIN_READY) {
+      let scormInitWaitCount = 0
+      while (!window.__SCORM_INIT_COMPLETE__ && scormInitWaitCount < 100) {
+        await new Promise(resolve => setTimeout(resolve, 50))
+        scormInitWaitCount++
+      }
+      if (window.__SCORM_INIT_COMPLETE__) {
+        console.log('SCORM Thin init complete, proceeding with load')
+      }
+    }
+
     if (this.scorm) {
       this.scorm.LMSInitialize('')
       this.loadProgress()
@@ -3757,14 +3644,9 @@ class SlatePlayer {
 
     // Check for returning viewer in localStorage
     const savedViewer = this.getSavedViewer()
-    if (
-      savedViewer?.email
-      && typeof savedViewer.trackingCapability === 'string'
-      && /^[a-f0-9]{64}$/.test(savedViewer.trackingCapability)
-    ) {
+    if (savedViewer) {
       this.viewerEmail = savedViewer.email
-      this.viewerName = typeof savedViewer.name === 'string' ? savedViewer.name : null
-      this.trackingCapability = savedViewer.trackingCapability
+      this.viewerName = savedViewer.name
       await this.registerViewer()
       return
     }
@@ -3799,11 +3681,11 @@ class SlatePlayer {
   /**
    * Save viewer to localStorage
    */
-  saveViewer(email, name, trackingCapability) {
-    if (!this.trackingConfig || !email || !trackingCapability) return
+  saveViewer(email, name) {
+    if (!this.trackingConfig) return
     try {
       const key = `slate_viewer_${this.trackingConfig.linkId}`
-      const data = JSON.stringify({ email, name: name || null, trackingCapability })
+      const data = JSON.stringify({ email, name })
       safeStorage.setItem(key, data)
       // Post to parent frame so it can persist in real localStorage (sandbox bridge)
       this.postToParent({ type: 'VIEWER_SAVED', key, data })
@@ -3874,6 +3756,7 @@ class SlatePlayer {
         this.viewerEmail = email
         this.viewerName = name
         this.viewerConsent = consent
+        this.saveViewer(email, name)
         overlay.remove()
 
         await this.registerViewer()
@@ -3913,31 +3796,14 @@ class SlatePlayer {
             p_name: this.viewerName || null,
             p_total_lessons: totalLessons,
             p_has_assessment: this.hasAssessment(),
-            p_email_consent: this.viewerConsent,
-            p_tracking_capability: this.trackingCapability,
-            p_link_access_capability: this.trackingConfig.linkAccessCapability || null
+            p_email_consent: this.viewerConsent
           })
         }
       )
 
       if (response.ok) {
         const result = await response.json()
-        if (result?.error) {
-          console.warn('Failed to register viewer:', result.error)
-          return
-        }
         this.viewerId = result.id
-
-        // New registrations receive the raw credential exactly once. Existing
-        // records return no replacement, so preserve the credential already
-        // held by this browser. Only the opaque value is persisted; the server
-        // stores its SHA-256 hash.
-        if (typeof result.tracking_capability === 'string' && /^[a-f0-9]{64}$/.test(result.tracking_capability)) {
-          this.trackingCapability = result.tracking_capability
-        }
-        if (this.viewerEmail && this.trackingCapability) {
-          this.saveViewer(this.viewerEmail, this.viewerName, this.trackingCapability)
-        }
 
         // Restore previous progress if any
         if (result.lessons_viewed && result.lessons_viewed.length > 0) {
@@ -3987,7 +3853,7 @@ class SlatePlayer {
    * Track lesson view
    */
   async trackLessonView(lessonId) {
-    if (!this.viewerId || !this.trackingCapability || !this.trackingConfig) return
+    if (!this.viewerId || !this.trackingConfig) return
 
     try {
       await fetch(
@@ -4001,8 +3867,7 @@ class SlatePlayer {
           },
           body: JSON.stringify({
             p_view_id: this.viewerId,
-            p_lesson_id: lessonId,
-            p_tracking_capability: this.trackingCapability
+            p_lesson_id: lessonId
           })
         }
       )
@@ -4016,7 +3881,7 @@ class SlatePlayer {
    * Track assessment passed (for Share & Track)
    */
   async trackAssessmentPassed() {
-    if (!this.viewerId || !this.trackingCapability || !this.trackingConfig) return
+    if (!this.viewerId || !this.trackingConfig) return
 
     try {
       await fetch(
@@ -4029,8 +3894,7 @@ class SlatePlayer {
             'Authorization': `Bearer ${this.trackingConfig.supabaseKey}`
           },
           body: JSON.stringify({
-            p_view_id: this.viewerId,
-            p_tracking_capability: this.trackingCapability
+            p_view_id: this.viewerId
           })
         }
       )
@@ -4140,13 +4004,7 @@ class SlatePlayer {
     const title = this.getTranslatedCourseTitle()
     const titleEl = document.getElementById('course-title')
     const logoEl = document.getElementById('course-logo')
-    // While high-contrast mode is active, prefer the high-contrast logo variant
-    // (e.g. a dark logo for the light HC palette) and fall back to the default
-    // logo when it isn't set. The `slate-hc` class is the single source of truth,
-    // toggled by applyAccessibilityPrefs() (on load) and toggleHighContrast().
-    const settings = this.course.settings || {}
-    const highContrast = document.documentElement.classList.contains('slate-hc')
-    const logoUrl = (highContrast && settings.highContrastLogoUrl) || settings.logoUrl
+    const logoUrl = this.course.settings?.logoUrl
 
     if (logoUrl && logoEl) {
       // Show logo, keep title accessible to screen readers
@@ -4193,11 +4051,6 @@ class SlatePlayer {
     // Custom CSS is injected during applyThemeSettings (before this runs), so
     // suppress it now if HC is active.
     this._syncCustomCssForContrast()
-    // render() calls updateCourseTitle() before this method sets the slate-hc
-    // class, so re-select the header logo now that the class reflects the saved
-    // preference. Guarded on a configured high-contrast logo so courses without
-    // one are untouched (no extra DOM writes, identical existing behavior).
-    if (this.course.settings?.highContrastLogoUrl) this.updateCourseTitle()
 
     // Text size — a root-font-size multiplier consumed by styles.css. Set
     // unconditionally (incl. '1') so a stale enlarged value can't survive a
@@ -4501,8 +4354,6 @@ class SlatePlayer {
   toggleHighContrast(on) {
     document.documentElement.classList.toggle('slate-hc', !!on)
     this._syncCustomCssForContrast()
-    // Swap to/from the high-contrast logo variant live, if one is configured.
-    if (this.course.settings?.highContrastLogoUrl) this.updateCourseTitle()
     this._settingsPane?.querySelector('#slate-hc-toggle')?.setAttribute('aria-checked', on ? 'true' : 'false')
     safeStorage.setItem('slate-a11y-contrast', on ? 'on' : 'off')
     this._announceSettings(this.t(on ? 'settings.highContrastOn' : 'settings.highContrastOff'))
@@ -5503,7 +5354,6 @@ class SlatePlayer {
 
       case 'knowledge-check':
         addEntry(block.content?.question, 'Question')
-        addEntry(block.content?.instructions, 'Instructions')
         // Only index MC/MS option text (visible to learners).
         // FIB acceptedAnswers are excluded — indexing them would expose correct answers via search.
         block.content?.options?.forEach(opt => {
@@ -7172,7 +7022,7 @@ class SlatePlayer {
           wrapper.innerHTML = `
             <figure class="image-${escapeHtml(content.width) || 'large'} image-align-${escapeHtml(content.align) || 'center'}">
               <div class="hotspot-container">
-                <img src="${escapeHtml(sanitizeUrl(content.src))}" alt="${escapeHtml(content.alt)}" loading="lazy">
+                <img src="${escapeHtml(content.src)}" alt="${escapeHtml(content.alt)}" loading="lazy">
                 ${markersHtml}
               </div>
               ${content.caption ? `<figcaption>${sanitizeHtml(content.caption)}</figcaption>` : ''}
@@ -7182,7 +7032,7 @@ class SlatePlayer {
         } else {
           wrapper.innerHTML = `
             <figure class="image-${escapeHtml(content.width) || 'large'} image-align-${escapeHtml(content.align) || 'center'}">
-              <img src="${escapeHtml(sanitizeUrl(content.src))}" alt="${escapeHtml(content.alt)}" loading="lazy">
+              <img src="${escapeHtml(content.src)}" alt="${escapeHtml(content.alt)}" loading="lazy">
               ${content.caption ? `<figcaption>${sanitizeHtml(content.caption)}</figcaption>` : ''}
             </figure>
           `
@@ -7337,7 +7187,7 @@ class SlatePlayer {
           <div class="narration-progress-bar"></div>
         </div>
         <span class="narration-time">0:00</span>
-        <audio src="${escapeHtml(sanitizeUrl(narration.audioUrl))}" preload="metadata"></audio>
+        <audio src="${escapeHtml(narration.audioUrl)}" preload="metadata"></audio>
       </div>
     `
   }
@@ -7447,7 +7297,7 @@ class SlatePlayer {
     const caption = content.caption ? `<figcaption>${sanitizeHtml(content.caption)}</figcaption>` : ''
     return `
       <figure class="audio-block">
-        <audio src="${escapeHtml(sanitizeUrl(content.src))}" controls preload="metadata"></audio>
+        <audio src="${escapeHtml(content.src)}" controls preload="metadata"></audio>
         ${caption}
       </figure>
     `
@@ -7470,7 +7320,7 @@ class SlatePlayer {
     const fileSize = this.formatFileSize(effectiveContent.filesize || content.filesize || 0)
     const mimeType = effectiveContent.mimeType || content.mimeType || ''
 
-    const iconSvg = this.getDocumentIconSvg(mimeType, filename)
+    const iconSvg = this.getDocumentIconSvg(mimeType)
     const downloadSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>'
 
     // Subtle provider acknowledgment for documents hosted on recognised
@@ -7487,59 +7337,27 @@ class SlatePlayer {
       ? `<span class="document-meta">${providerHtml}${sizeHtml}</span>`
       : ''
 
-    const inner = `
+    return `
+      <div class="document-block">
+        <a href="${escapeHtml(documentUrl)}"
+           class="document-download"
+           download="${escapeHtml(filename)}"
+           target="_blank"
+           rel="noopener noreferrer">
           <div class="document-icon">${iconSvg}</div>
           <div class="document-info">
             <span class="document-title">${title}</span>
             ${metaHtml}
             ${description}
           </div>
-          <div class="document-action">${downloadSvg}</div>`
-
-    // Resolve the download href once. A document block with no usable source —
-    // its file was skipped on import (which blanks `src` but leaves `filename`),
-    // or the author hasn't attached a file yet — must render an INERT card, not
-    // a working download. An empty href, sanitizeNavUrl's `#blocked` result for
-    // an .svg/.xml document URL, and any bare `#fragment` src all resolve to the
-    // current document, so with the `download` attribute a click would save the
-    // player page itself. Treat every same-document href (empty, or starting
-    // with `#`) as "no source". Keep the card visible (authors see the block
-    // while building); just drop the anchor so nothing is downloadable.
-    const safeHref = sanitizeNavUrl(documentDownloadUrl(documentUrl, filename))
-    if (!safeHref || safeHref.startsWith('#')) {
-      return `
-      <div class="document-block">
-        <div class="document-download document-download--inert">${inner}
-        </div>
-      </div>
-    `
-    }
-
-    return `
-      <div class="document-block">
-        <a href="${escapeHtml(safeHref)}"
-           class="document-download"
-           download="${escapeHtml(filename)}"
-           target="_blank"
-           rel="noopener noreferrer">${inner}
+          <div class="document-action">${downloadSvg}</div>
         </a>
       </div>
     `
   }
 
-  getDocumentIconSvg(mimeType, filename = '') {
-    // Archive file-type icon (by extension — an archive's mimeType isn't caught
-    // by the office/pdf checks below). Kept in sync by convention with the
-    // archive set in shared/document-types.ts (the player is dependency-free and
-    // can't import it). This is what a learner sees when downloading a .zip.
-    const name = (filename || '').toLowerCase()
-    const isArchive = ['zip', 'tar', 'gz', 'tgz', 'tar.gz', '7z'].some((e) => name.endsWith('.' + e))
-    if (isArchive) {
-      // Folder-archive glyph (zipped folder) — clearer than a file-with-zipper
-      // for a downloadable archive. Lucide `folder-archive`.
-      return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="15" cy="19" r="2"/><path d="M20.9 19.8A2 2 0 0 0 22 18V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2h11"/><path d="M15 11v-1"/><path d="M15 17v-2"/></svg>'
-    }
-    // All other document types use a simple file icon - differentiated by subtle visual cues
+  getDocumentIconSvg(mimeType) {
+    // All document types use a simple file icon - differentiated by subtle visual cues
     // PDF icon - lines representing text
     if (mimeType.includes('pdf')) {
       return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>'
@@ -7667,12 +7485,12 @@ class SlatePlayer {
 
     // Native video (url/upload) - use <track> element for subtitles
     const trackTag = content.transcript?.src
-      ? `<track kind="captions" src="${escapeHtml(sanitizeUrl(content.transcript.src))}" srclang="${escapeHtml(this.selectedLanguage || this.courseData?.meta?.language || 'en')}" label="Captions" default>`
+      ? `<track kind="captions" src="${escapeHtml(content.transcript.src)}" srclang="${escapeHtml(this.selectedLanguage || this.courseData?.meta?.language || 'en')}" label="Captions" default>`
       : ''
 
     return `
       <div class="video-wrapper">
-        <video src="${escapeHtml(sanitizeUrl(content.src))}" controls preload="metadata"${content.transcript?.src ? ' crossorigin="anonymous"' : ''}>${trackTag}</video>
+        <video src="${escapeHtml(content.src)}" controls preload="metadata"${content.transcript?.src ? ' crossorigin="anonymous"' : ''}>${trackTag}</video>
       </div>
       ${captionHtml}
     `
@@ -8393,7 +8211,7 @@ class SlatePlayer {
         const tag = isHeaderCell ? 'th' : 'td'
         const scope = isInHeader ? 'col' : (headerColumn && colIndex === 0 ? 'row' : '')
         const scopeAttr = scope ? ` scope="${scope}"` : ''
-        const alignStyle = ['center', 'right'].includes(cell.align) ? ` style="text-align:${cell.align}"` : ''
+        const alignStyle = cell.align && cell.align !== 'left' ? ` style="text-align:${cell.align}"` : ''
 
         return `<${tag}${scopeAttr}${alignStyle}>${sanitizeHtml(cell.html)}</${tag}>`
       }).join('')
@@ -8482,7 +8300,7 @@ class SlatePlayer {
     // Render card image if present
     const imageHtml = hasImage ? `
       <div class="card-image">
-        <img src="${escapeHtml(sanitizeUrl(content.imageUrl))}" alt="${escapeHtml(content.imageAlt || '')}" loading="lazy"${focalPointStyle(content.imageFocalPoint)}>
+        <img src="${escapeHtml(content.imageUrl)}" alt="${escapeHtml(content.imageAlt || '')}" loading="lazy"${focalPointStyle(content.imageFocalPoint)}>
       </div>
     ` : ''
 
@@ -8504,7 +8322,7 @@ class SlatePlayer {
     if (content.linkUrl) {
       const target = content.linkNewTab ? 'target="_blank" rel="noopener noreferrer"' : ''
       return `
-        <a href="${escapeHtml(sanitizeNavUrl(content.linkUrl))}" ${target} class="card ${styleClass} ${layoutClass} ${isClickable}">
+        <a href="${sanitizeUrl(content.linkUrl)}" ${target} class="card ${styleClass} ${layoutClass} ${isClickable}">
           ${imagePosition === 'top' ? imageHtml : ''}
           <div class="card-inner">${cardInner}</div>
         </a>
@@ -8543,7 +8361,7 @@ class SlatePlayer {
         return `
           <div class="flip-card-face ${className} ${styleClass} flip-card-face-image-only">
             <div class="flip-card-image">
-              <img src="${escapeHtml(sanitizeUrl(info.imageUrl))}" alt="${escapeHtml(info.imageAlt)}" loading="lazy"${focalPointStyle(side.imageFocalPoint)}>
+              <img src="${escapeHtml(info.imageUrl)}" alt="${escapeHtml(info.imageAlt)}" loading="lazy"${focalPointStyle(side.imageFocalPoint)}>
             </div>
           </div>
         `
@@ -8553,7 +8371,7 @@ class SlatePlayer {
         <div class="flip-card-face ${className} ${styleClass}">
           ${side.imageUrl ? `
             <div class="flip-card-image">
-              <img src="${escapeHtml(sanitizeUrl(side.imageUrl))}" alt="${escapeHtml(side.imageAlt || '')}" loading="lazy"${focalPointStyle(side.imageFocalPoint)}>
+              <img src="${escapeHtml(side.imageUrl)}" alt="${escapeHtml(side.imageAlt || '')}" loading="lazy"${focalPointStyle(side.imageFocalPoint)}>
             </div>
           ` : ''}
           <div class="flip-card-body">
@@ -8566,7 +8384,7 @@ class SlatePlayer {
     }
 
     return `
-      <div class="flip-card flip-${cssToken(direction, 'horizontal')} flip-trigger-${cssToken(trigger, 'click')} aspect-${cssToken(String(aspectRatio).replace(':', '-'), '4-3')}"
+      <div class="flip-card flip-${direction} flip-trigger-${trigger} aspect-${aspectRatio.replace(':', '-')}"
            role="button"
            tabindex="0"
            aria-label="${escapeHtml(this.t('a11y.flipCardHint'))}">
@@ -8857,7 +8675,7 @@ class SlatePlayer {
       const cardContent = `
         ${hasImage ? `
           <div class="carousel-card-image">
-            <img src="${escapeHtml(sanitizeUrl(card.imageUrl))}" alt="${escapeHtml(card.imageAlt || '')}" loading="lazy"${focalPointStyle(card.imageFocalPoint)}>
+            <img src="${escapeHtml(card.imageUrl)}" alt="${escapeHtml(card.imageAlt || '')}" loading="lazy"${focalPointStyle(card.imageFocalPoint)}>
           </div>
         ` : ''}
         <div class="carousel-card-body">
@@ -8870,7 +8688,7 @@ class SlatePlayer {
       if (card.linkUrl) {
         const target = card.linkNewTab ? 'target="_blank" rel="noopener noreferrer"' : ''
         return `
-          <a href="${escapeHtml(sanitizeNavUrl(card.linkUrl))}" ${target}
+          <a href="${sanitizeUrl(card.linkUrl)}" ${target}
              class="carousel-card ${styleClass} ${isClickable}"
              data-index="${index}">
             ${cardContent}
@@ -9167,7 +8985,7 @@ class SlatePlayer {
         return `
           <div class="flip-card-face ${className} ${styleClass} flip-card-face-image-only">
             <div class="flip-card-image">
-              <img src="${escapeHtml(sanitizeUrl(info.imageUrl))}" alt="${escapeHtml(info.imageAlt)}" loading="lazy"${focalPointStyle(side.imageFocalPoint)}>
+              <img src="${escapeHtml(info.imageUrl)}" alt="${escapeHtml(info.imageAlt)}" loading="lazy"${focalPointStyle(side.imageFocalPoint)}>
             </div>
           </div>
         `
@@ -9177,7 +8995,7 @@ class SlatePlayer {
         <div class="flip-card-face ${className} ${styleClass}">
           ${side.imageUrl ? `
             <div class="flip-card-image">
-              <img src="${escapeHtml(sanitizeUrl(side.imageUrl))}" alt="${escapeHtml(side.imageAlt || '')}" loading="lazy"${focalPointStyle(side.imageFocalPoint)}>
+              <img src="${escapeHtml(side.imageUrl)}" alt="${escapeHtml(side.imageAlt || '')}" loading="lazy"${focalPointStyle(side.imageFocalPoint)}>
             </div>
           ` : ''}
           <div class="flip-card-body">
@@ -9191,7 +9009,7 @@ class SlatePlayer {
 
     const cardsHtml = (content.cards || []).map((card, index) => `
       <div class="carousel-card flip-card-carousel-card" data-index="${index}">
-        <div class="flip-card flip-${cssToken(direction, 'horizontal')} flip-trigger-${cssToken(trigger, 'click')} aspect-${cssToken(String(aspectRatio).replace(':', '-'), '4-3')}"
+        <div class="flip-card flip-${direction} flip-trigger-${trigger} aspect-${aspectRatio.replace(':', '-')}"
              role="button"
              tabindex="0"
              aria-label="${escapeHtml(this.t('a11y.flipCardHint'))}">
@@ -9347,9 +9165,8 @@ class SlatePlayer {
     return css
       // Block javascript: URLs in url()
       .replace(/url\s*\(\s*(['"]?)javascript:/gi, 'url($1blocked:')
-      // Block @import rules (can load external resources). Use a word boundary,
-      // not \s+, so the quote-adjacent form (@import"url") is also caught.
-      .replace(/@import\b/gi, '/* @import blocked */ ')
+      // Block @import rules (can load external resources)
+      .replace(/@import\s+/gi, '/* @import blocked */ ')
       // Block IE expression() (legacy XSS vector)
       .replace(/expression\s*\(/gi, '/* expression blocked */ (')
       // Block IE behavior property (legacy XSS vector)
@@ -9779,7 +9596,7 @@ class SlatePlayer {
         const width = escapeHtml(item.width) || 'large'
         const align = escapeHtml(item.align) || 'center'
         return `<figure class="tab-image image-${width} image-align-${align}">
-          <img src="${escapeHtml(sanitizeUrl(item.content))}" alt="${escapeHtml(item.alt)}" loading="lazy" />
+          <img src="${escapeHtml(item.content)}" alt="${escapeHtml(item.alt)}" loading="lazy" />
         </figure>`
       } else if (item.type === 'video') {
         const videoContent = { src: item.content, provider: item.provider || 'url', caption: item.caption, transcript: item.transcript }
@@ -9962,26 +9779,11 @@ class SlatePlayer {
   }
 
   renderButton(content) {
-    const align = content.align || 'center'
-    const styleClass = `button-${escapeHtml(content.style) || 'primary'}`
-
-    // Exit-course action: render a real <button> (an action, not navigation) that
-    // triggers the shared course-exit flow. No href, so nothing navigates the SCORM
-    // frame even if the click listener fails to attach. See handleExitCourse().
-    if (content.action === 'exit') {
-      return `
-      <div class="button-wrapper button-align-${align}">
-        <button type="button" class="slate-button ${styleClass} slate-button-exit">
-          ${escapeHtml(content.text)}
-        </button>
-      </div>
-    `
-    }
-
     const target = content.openInNewTab ? 'target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer"' : ''
+    const align = content.align || 'center'
     return `
       <div class="button-wrapper button-align-${align}">
-        <a href="${escapeHtml(sanitizeNavUrl(content.url))}" class="slate-button ${styleClass}" ${target}>
+        <a href="${sanitizeUrl(content.url)}" class="slate-button button-${escapeHtml(content.style) || 'primary'}" ${target}>
           ${escapeHtml(content.text)}
         </a>
       </div>
@@ -10132,12 +9934,6 @@ class SlatePlayer {
       if (content.xapiStatement) {
         this.sendXapiStatement(content.xapiStatement)
       }
-
-      // Exit-course action: run the shared exit flow (LMSFinish + close tab +
-      // fallback message). Runs after tracking so the click is still recorded.
-      if (content.action === 'exit') {
-        this.handleExitCourse()
-      }
     })
   }
 
@@ -10157,7 +9953,7 @@ class SlatePlayer {
       return `
         <div class="iframe-wrapper aspect-ratio" style="padding-bottom: ${paddingMap[aspectRatio]}">
           <iframe
-            src="${escapeHtml(sanitizeNavUrl(content.src))}"
+            src="${escapeHtml(sanitizeUrl(content.src))}"
             title="${title}"
             ${allowAttr}
             ${allowFs}
@@ -10172,7 +9968,7 @@ class SlatePlayer {
     return `
       <div class="iframe-wrapper">
         <iframe
-          src="${escapeHtml(sanitizeNavUrl(content.src))}"
+          src="${escapeHtml(sanitizeUrl(content.src))}"
           height="${height}"
           title="${title}"
           ${allowAttr}
@@ -10184,20 +9980,13 @@ class SlatePlayer {
   }
 
   renderKnowledgeCheck(block) {
-    const { question, instructions, options, questionType } = block.content
-
-    // Optional author-supplied instruction line, rendered after the legend
-    // in both branches (<legend> must stay the fieldset's first child).
-    const instructionHtml = instructions
-      ? `<p class="kc-instruction">${sanitizeHtml(instructions)}</p>`
-      : ''
+    const { question, options, questionType } = block.content
 
     // Fill in the blank rendering
     if (questionType === 'fill-in-the-blank') {
       return `
         <fieldset class="kc-fieldset" data-question-type="fill-in-the-blank">
           <legend class="kc-question">${sanitizeHtml(question)}</legend>
-          ${instructionHtml}
           <div class="kc-fib-input-wrapper">
             <input type="text" class="kc-text-input"
                    placeholder="${escapeHtml(this.t('quiz.typeAnswer'))}"
@@ -10220,8 +10009,7 @@ class SlatePlayer {
     return `
       <fieldset class="kc-fieldset" data-question-type="${escapeHtml(questionType) || 'multiple-choice'}">
         <legend class="kc-question">${sanitizeHtml(question)}</legend>
-        ${instructionHtml}
-        ${isMultiSelect && !instructions ? `<p class="kc-hint">${escapeHtml(this.t('quiz.selectAll'))}</p>` : ''}
+        ${isMultiSelect ? `<p class="kc-hint">${escapeHtml(this.t('quiz.selectAll'))}</p>` : ''}
         <div class="kc-options" role="${groupRole}" aria-label="${escapeHtml(this.t('quiz.answerOptions'))}">
           ${options.map((opt, index) => `
             <div class="${optionClass}"

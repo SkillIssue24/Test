@@ -2359,11 +2359,7 @@ body {
   justify-content: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-6);
-  /* font-family/line-height are inherited so a <button class="slate-button">
-     (the exit-course action variant) matches the <a> variant exactly. */
-  font-family: inherit;
   font-size: var(--text-base);
-  line-height: inherit;
   font-weight: 500;
   text-decoration: none;
   border-radius: var(--radius-lg);
@@ -2450,19 +2446,6 @@ body {
   background: var(--slate-100);
   border-color: var(--accent-color);
   box-shadow: var(--shadow-sm);
-}
-
-/* Source-less document block (file skipped on import, or not yet attached):
-   the card stays visible but is inert — no anchor, so no hover/pointer that
-   would imply a working download. */
-.document-download--inert {
-  cursor: default;
-}
-
-.document-download--inert:hover {
-  background: var(--slate-50);
-  border-color: var(--slate-200);
-  box-shadow: none;
 }
 
 .document-icon {
@@ -2573,14 +2556,6 @@ body {
 }
 
 .kc-hint {
-  font-size: var(--text-sm);
-  color: var(--slate-500);
-  margin-bottom: var(--space-4);
-  font-style: italic;
-}
-
-/* Optional author-supplied instruction line (all question types) */
-.kc-instruction {
   font-size: var(--text-sm);
   color: var(--slate-500);
   margin-bottom: var(--space-4);

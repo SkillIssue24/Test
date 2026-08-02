@@ -4,7 +4,7 @@
   "meta": {
     "title": "Safety",
     "created": "2026-06-03T06:51:36.279Z",
-    "updated": "2026-07-22T07:51:49.875Z",
+    "updated": "2026-08-01T17:43:38.810Z",
     "language": "en",
     "completionMode": "allBlocks"
   },
@@ -12,6 +12,7 @@
     "theme": "slate",
     "logoUrl": "media/logo-0.svg",
     "spacing": 16,
+    "bodyFont": "inter",
     "coverPage": {
       "author": "",
       "layout": "centered",
@@ -33,12 +34,18 @@
     },
     "hoverColor": "#27272A",
     "accentColor": "#18181B",
+    "headingFont": "inter",
     "borderRadius": 6,
     "outlineColor": "#E4E4E7",
     "primaryColor": "#18181B",
     "showProgress": true,
+    "bodyFontWeight": 400,
     "showNavigation": true,
-    "outlineThickness": 1
+    "lockedNavigation": true,
+    "outlineThickness": 1,
+    "headingFontWeight": 700,
+    "requireInteraction": true,
+    "requireLessonCompletion": true
   },
   "sections": [
     {
@@ -2773,11 +2780,6 @@
               }
             }
           ]
-        },
-        {
-          "id": "e8818e93-ead6-41d8-b69c-c9b58b61b973",
-          "title": "New Lesson",
-          "blocks": []
         }
       ]
     }

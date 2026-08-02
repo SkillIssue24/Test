@@ -3132,10 +3132,23 @@ class SlatePlayer {
               }
               // text / image / video / audio / button / iframe / divider:
               // shallow spread is fine — their translated content is a
-              // simple field-level overlay with no nested arrays.
+              // simple field-level overlay with no nested arrays. Video
+              // additionally gets the same atomic override-group guard as
+              // the top-level video merge: without a non-empty overlay src,
+              // src / provider / storagePath all fall back to source so a
+              // partial overlay can't splice a broken hybrid.
+              const mergedNested = { ...cellBlock.content, ...tContent }
+              if (cellBlock.type === 'video') {
+                const overrideSrc = tContent.src
+                if (!(typeof overrideSrc === 'string' && overrideSrc)) {
+                  mergedNested.src = cellBlock.content.src
+                  mergedNested.provider = cellBlock.content.provider
+                  mergedNested.storagePath = cellBlock.content.storagePath
+                }
+              }
               return {
                 ...cellBlock,
-                content: { ...cellBlock.content, ...tContent }
+                content: mergedNested
               }
             })
           }
@@ -3315,6 +3328,20 @@ class SlatePlayer {
     if (block.type === 'video' || block.type === 'audio') {
       const merged = { ...block.content, ...translatedBlock.content }
       merged.caption = translatedBlock.content.caption ?? ''
+      if (block.type === 'video') {
+        // Per-language video override: src / provider / storagePath act as an
+        // atomic group. Unless the overlay carries a complete replacement
+        // (non-empty src), fall back to the source video for all three so a
+        // partial overlay (e.g. a provider switched while composing, or an
+        // empty src) can't splice a broken hybrid together. Mirrored by the
+        // inline merge in player.test.js "video translation merge".
+        const overrideSrc = translatedBlock.content.src
+        if (!(typeof overrideSrc === 'string' && overrideSrc)) {
+          merged.src = block.content.src
+          merged.provider = block.content.provider
+          merged.storagePath = block.content.storagePath
+        }
+      }
       return merged
     }
 

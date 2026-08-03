@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Safety</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="slate-player">
+    <header id="player-header">
+      <div id="header-left" class="header-section"></div>
+      <div id="header-center" class="header-section">
+        <h1 id="course-title">Loading...</h1>
+        <img id="course-logo" src="" alt="" style="display: none;" />
+      </div>
+      <div id="header-right" class="header-section"></div>
+    </header>
+    <div id="player-body">
+      <nav id="player-nav"></nav>
+      <main id="player-content"></main>
+    </div>
+    <footer id="player-footer">
+      <div id="mobile-progress-bar" aria-hidden="true"><div id="mobile-progress-fill"></div></div>
+      <button id="btn-prev" disabled>Previous</button>
+      <span id="progress-text">0% Complete</span>
+      <button id="btn-next">Next</button>
+    </footer>
+  </div>
+  <!-- DOMPurify for XSS prevention in user-generated content -->
+  <script src="dompurify.min.js"></script>
+  <!-- SCORM wrapper MUST load first to set up window.SCORM before player.js uses it -->
+  <script src="scorm-wrapper.js"></script>
+  <script src="player.js"></script>
+</body>
+</html>
